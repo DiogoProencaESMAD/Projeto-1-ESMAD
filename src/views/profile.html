@@ -17,9 +17,22 @@
   <button id="goChat">Chat</button>
   <button id="goAchievements">Achievements</button>
 
+  <!-- CHAT OVERLAY (GLOBAL UI ELEMENT) -->
+  <div id="chatOverlay" class="hidden">
+    <div id="chatMessages" style="height:200px; overflow:auto; border:1px solid #ccc;"></div>
+
+    <input id="chatInput" placeholder="Message..." />
+    <button id="sendChat">Send</button>
+
+    <button id="closeChat">Close</button>
+  </div>
+
   <script type="module">
     import { initProfile } from "../controllers/profileController.js"
+    import { initChat } from "../controllers/chatController.js"
+
     initProfile()
+    initChat()
   </script>
 </body>
 </html>
