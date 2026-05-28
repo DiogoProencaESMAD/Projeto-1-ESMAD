@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile</title>
+</head>
+
+<body>
+  <h1>Profile</h1>
+
+  <div id="userInfo"></div>
+
+  <hr />
+
+  <button id="goCamera">Camera</button>
+  <button id="goQuiz">Quiz</button>
+  <button id="goChat">Chat</button>
+  <button id="goAchievements">Achievements</button>
+
+  <script type="module">
+    import { initProfile } from "../controllers/profileController.js"
+    initProfile()
+  </script>
+</body>
+</html>
