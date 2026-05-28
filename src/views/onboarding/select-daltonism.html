@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select Vision Type</title>
+</head>
+
+<body>
+  <h1>Select your vision type</h1>
+
+  <form id="daltonismForm">
+    <select id="daltonismType">
+      <option value="normal">Normal</option>
+      <option value="protanopia">Protanopia</option>
+      <option value="deuteranopia">Deuteranopia</option>
+      <option value="tritanopia">Tritanopia</option>
+      <option value="monochromacy">Monochromacy</option>
+    </select>
+
+    <button type="submit">Continue</button>
+  </form>
+
+  <script type="module">
+    import { initDaltonism } from "../../controllers/onboardingController.js"
+    initDaltonism()
+  </script>
+</body>
+</html>
