@@ -1,15 +1,15 @@
-import { getMessages, saveMessages } from "../services/chatService.js"
+import {
+  getMessages,
+  sendMessage
+} from "../services/chatService.js"
 
 export function initChat() {
   const input = document.getElementById("chatInput")
   const sendBtn = document.getElementById("sendChat")
-  const closeBtn = document.getElementById("closeChat")
   const container = document.getElementById("chatMessages")
 
-  if (!input || !sendBtn || !container) return
-
-  function renderMessages() {
-    const messages = getMessages()
+  async function render() {
+    const messages = await getMessages()
 
     container.innerHTML = messages
       .map(
@@ -18,29 +18,23 @@ export function initChat() {
       .join("")
   }
 
-  sendBtn.addEventListener("click", () => {
+  sendBtn.addEventListener("click", async () => {
     const user = JSON.parse(localStorage.getItem("currentUser"))
     const text = input.value.trim()
 
     if (!text) return
 
-    const messages = getMessages()
-
-    messages.push({
+    await sendMessage({
       user: user.username,
       text
     })
 
-    saveMessages(messages)
-
     input.value = ""
-    renderMessages()
+    render()
   })
 
-  closeBtn.addEventListener("click", () => {
-    document.getElementById("chatOverlay").classList.add("hidden")
-  })
+  // auto refresh (fake real-time)
+  setInterval(render, 2000)
 
-  // initial render
-  renderMessages()
+  render()
 }

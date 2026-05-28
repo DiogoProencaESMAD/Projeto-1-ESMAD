@@ -1,9 +1,16 @@
-const CHAT_KEY = "messages"
+const API_URL = "http://localhost:3000/messages"
 
-export function getMessages() {
-  return JSON.parse(localStorage.getItem(CHAT_KEY)) || []
+export async function getMessages() {
+  const res = await fetch(API_URL)
+  return await res.json()
 }
 
-export function saveMessages(messages) {
-  localStorage.setItem(CHAT_KEY, JSON.stringify(messages))
+export async function sendMessage(message) {
+  await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(message)
+  })
 }
