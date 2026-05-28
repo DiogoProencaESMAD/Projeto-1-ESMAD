@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Huebly</title>
-    <link rel="stylesheet" href="styles/global.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Loading...</title>
 
-    <script type="module" src="src/main.js"></script>
-  </body>
+  <!-- FOUC -->
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Loading...</p>
+
+  <script>
+     // ENTRY POINT CONTROLLER 
+
+    // Clear session each time if professor wants strict login
+    localStorage.removeItem("currentUser");
+
+    // Always go to login page
+    window.location.replace("./src/views/auth/login.html");
+  </script>
+</body>
 </html>

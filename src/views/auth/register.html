@@ -1,0 +1,32 @@
+<form id="registerForm">
+  <h1>Create Account</h1>
+
+  <input
+    id="registerUsername"
+    type="text"
+    placeholder="Username"
+    required
+  />
+
+  <input
+    id="registerPassword"
+    type="password"
+    placeholder="Password"
+    required
+  />
+
+  <select id="role">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button type="submit">
+    Register
+  </button>
+</form>
+
+<script type="module">
+  import { initRegister } from "../../controllers/authController.js"
+
+  initRegister()
+</script>
