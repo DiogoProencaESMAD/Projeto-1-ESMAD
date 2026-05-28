@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>Profile</title>
-
   <style>
     .hidden {
       display: none;
     }
   </style>
 </head>
-
 <body>
   <h1>Profile</h1>
-
   <div id="userInfo"></div>
-
   <hr />
-
   <button id="goCamera" type="button">Camera</button>
   <button id="goQuiz" type="button">Quiz</button>
   <button id="goChat" type="button">Chat</button>
@@ -26,19 +21,14 @@
   <!-- CHAT OVERLAY -->
   <div id="chatOverlay" class="hidden">
     <div id="chatMessages"
-         style="height:200px; overflow:auto; border:1px solid #ccc;"></div>
-
-    <input id="chatInput" placeholder="Message..." />
-
+      style="height:200px; overflow:auto; border:1px solid #ccc;"></div>
+    <input id="chatInput" type="text" autocomplete="off" />
     <button id="sendChat" type="button">Send</button>
-
-    <button id="closeChat" type="button">Close</button>
   </div>
 
   <script type="module">
     import { initProfile } from "../controllers/profileController.js"
     import { initChat } from "../controllers/chatController.js"
-
     initProfile()
     initChat()
   </script>

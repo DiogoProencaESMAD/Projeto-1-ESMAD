@@ -1,33 +1,34 @@
 export function initProfile() {
   const user = JSON.parse(localStorage.getItem("currentUser"))
-  const daltonismType = localStorage.getItem("daltonismType")
+  const type = localStorage.getItem("daltonismType")
 
-  if (!user || !daltonismType) {
-    window.location.href = "./auth/login.html"
-    return
-  }
+  const userInfo = document.getElementById("userInfo")
+  const goCamera = document.getElementById("goCamera")
+  const goQuiz = document.getElementById("goQuiz")
+  const goChat = document.getElementById("goChat")
+  const goAchievements = document.getElementById("goAchievements")
+  const overlay = document.getElementById("chatOverlay")
 
-  document.getElementById("userInfo").innerHTML = `
+  if (!userInfo || !goCamera || !goQuiz || !goChat || !goAchievements || !overlay) return
+  if (!user || !type) return
+
+  userInfo.innerHTML = `
     <p><strong>Username:</strong> ${user.username}</p>
     <p><strong>Role:</strong> ${user.role}</p>
-    <p><strong>Vision Type:</strong> ${daltonismType}</p>
+    <p><strong>Vision:</strong> ${type}</p>
   `
 
-  document.getElementById("goCamera").addEventListener("click", () => {
-    window.location.href = "./camera.html"
-  })
+  goCamera.onclick = () => { window.location.href = "./camera.html" }
+  goQuiz.onclick = () => { window.location.href = "./quiz.html" }
+  goAchievements.onclick = () => { window.location.href = "./achievements.html" }
 
-  document.getElementById("goQuiz").addEventListener("click", () => {
-    window.location.href = "./quiz.html"
-  })
-
-  document.getElementById("goAchievements").addEventListener("click", () => {
-    window.location.href = "./achievements.html"
-  })
-
-  // CHAT TOGGLE (IMPORTANT)
-  document.getElementById("goChat").addEventListener("click", () => {
-    const overlay = document.getElementById("chatOverlay")
+  goChat.onclick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
     overlay.classList.toggle("hidden")
+  }
+
+  overlay.addEventListener("click", (e) => {
+    e.stopPropagation()
   })
 }

@@ -1,49 +1,43 @@
-import { getMessages, saveMessages } from "../services/chatService.js"
+import { getMessages, sendMessage } from "../services/chatService.js"
 
 export function initChat() {
   const input = document.getElementById("chatInput")
   const sendBtn = document.getElementById("sendChat")
-  const closeBtn = document.getElementById("closeChat")
-  const overlay = document.getElementById("chatOverlay")
   const container = document.getElementById("chatMessages")
 
-  if (!input || !sendBtn || !closeBtn || !overlay || !container) return
+  if (!input || !sendBtn || !container) return
 
   async function render() {
-    const messages = getMessages()
-
+    const messages = await getMessages()
     container.innerHTML = messages
       .map(m => `<p><strong>${m.user}:</strong> ${m.text}</p>`)
       .join("")
   }
 
-  sendBtn.addEventListener("click", async (e) => {
+  async function handleSend(e) {
     e.preventDefault()
+    e.stopPropagation()
 
     const user = JSON.parse(localStorage.getItem("currentUser"))
     const text = input.value.trim()
+    if (!text || !user) return
 
-    if (!text) return
+    try {
+      await sendMessage({ user: user.username, text })
+      input.value = ""
+      await render()
+    } catch (err) {
+      console.error("Send failed:", err)
+    }
+  }
 
-    const messages = getMessages()
+  sendBtn.addEventListener("click", handleSend)
 
-    messages.push({
-      user: user.username,
-      text
-    })
-
-    saveMessages(messages)
-
-    input.value = ""
-
-    await render()
-
-    // FORCE KEEP OVERLAY OPEN (safety line)
-    overlay.classList.remove("hidden")
-  })
-
-  closeBtn.addEventListener("click", () => {
-    overlay.classList.add("hidden")
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      handleSend(e)
+    }
   })
 
   render()
