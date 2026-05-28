@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>Profile</title>
+
   <style>
-  .hidden {
-    display: none;
-  }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 
@@ -17,19 +18,21 @@
 
   <hr />
 
-  <button id="goCamera">Camera</button>
-  <button id="goQuiz">Quiz</button>
-  <button id="goChat">Chat</button>
-  <button id="goAchievements">Achievements</button>
+  <button id="goCamera" type="button">Camera</button>
+  <button id="goQuiz" type="button">Quiz</button>
+  <button id="goChat" type="button">Chat</button>
+  <button id="goAchievements" type="button">Achievements</button>
 
-  <!-- CHAT OVERLAY (GLOBAL UI ELEMENT) -->
+  <!-- CHAT OVERLAY -->
   <div id="chatOverlay" class="hidden">
-    <div id="chatMessages" style="height:200px; overflow:auto; border:1px solid #ccc;"></div>
+    <div id="chatMessages"
+         style="height:200px; overflow:auto; border:1px solid #ccc;"></div>
 
     <input id="chatInput" placeholder="Message..." />
-    <button id="sendChat">Send</button>
 
-    <button id="closeChat">Close</button>
+    <button id="sendChat" type="button">Send</button>
+
+    <button id="closeChat" type="button">Close</button>
   </div>
 
   <script type="module">

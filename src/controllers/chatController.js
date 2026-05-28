@@ -1,40 +1,50 @@
-import {
-  getMessages,
-  sendMessage
-} from "../services/chatService.js"
+import { getMessages, saveMessages } from "../services/chatService.js"
 
 export function initChat() {
   const input = document.getElementById("chatInput")
   const sendBtn = document.getElementById("sendChat")
+  const closeBtn = document.getElementById("closeChat")
+  const overlay = document.getElementById("chatOverlay")
   const container = document.getElementById("chatMessages")
 
+  if (!input || !sendBtn || !closeBtn || !overlay || !container) return
+
   async function render() {
-    const messages = await getMessages()
+    const messages = getMessages()
 
     container.innerHTML = messages
-      .map(
-        m => `<p><strong>${m.user}:</strong> ${m.text}</p>`
-      )
+      .map(m => `<p><strong>${m.user}:</strong> ${m.text}</p>`)
       .join("")
   }
 
-  sendBtn.addEventListener("click", async () => {
+  sendBtn.addEventListener("click", async (e) => {
+    e.preventDefault()
+
     const user = JSON.parse(localStorage.getItem("currentUser"))
     const text = input.value.trim()
 
     if (!text) return
 
-    await sendMessage({
+    const messages = getMessages()
+
+    messages.push({
       user: user.username,
       text
     })
 
+    saveMessages(messages)
+
     input.value = ""
-    render()
+
+    await render()
+
+    // FORCE KEEP OVERLAY OPEN (safety line)
+    overlay.classList.remove("hidden")
   })
 
-  // auto refresh (fake real-time)
-  setInterval(render, 2000)
+  closeBtn.addEventListener("click", () => {
+    overlay.classList.add("hidden")
+  })
 
   render()
 }

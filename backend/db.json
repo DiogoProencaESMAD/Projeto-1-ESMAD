@@ -1,3 +1,20 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "user": "admin ",
+      "text": "hello",
+      "id": "yk4wrnOi2t0"
+    },
+    {
+      "user": "admin ",
+      "text": "yo-yo",
+      "id": "aaPR97ZWPz0"
+    },
+    {
+      "user": "admin ",
+      "text": "12341234",
+      "id": "fEhOAE7eBio"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
