@@ -184,6 +184,48 @@
       "user": "admin ",
       "text": "Luis Pinto",
       "id": "cDkhJUx423o"
+    },
+    {
+      "user": "admin ",
+      "text": "Diogo Medeiros",
+      "id": "hrzopNw5bqA"
+    },
+    {
+      "user": "admin ",
+      "text": "eeeee",
+      "id": "7u7CpmM0heo"
+    },
+    {
+      "user": "admin ",
+      "text": "porto",
+      "id": "uccnUV2bbY8"
+    },
+    {
+      "user": "admin ",
+      "text": "e",
+      "id": "NMkc-P2md7c"
+    },
+    {
+      "user": "admin ",
+      "text": "e",
+      "id": "_bxFZrZX5H4"
+    },
+    {
+      "user": "admin ",
+      "text": "eeeee",
+      "id": "n5dYAQnMAnE"
+    },
+    {
+      "user": "admin ",
+      "text": "portoorototot",
+      "timestamp": "2026-05-28T14:32:09.087Z",
+      "id": "qCjYB2Q7n6o"
+    },
+    {
+      "user": "admin ",
+      "text": "brenfrica",
+      "timestamp": "2026-05-28T14:33:19.500Z",
+      "id": "F_nyuSlpqQY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

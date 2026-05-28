@@ -19,18 +19,11 @@
   <button id="goAchievements" type="button">Achievements</button>
 
   <!-- CHAT OVERLAY -->
-  <div id="chatOverlay" class="hidden">
-    <div id="chatMessages"
-      style="height:200px; overflow:auto; border:1px solid #ccc;"></div>
-    <input id="chatInput" type="text" autocomplete="off" />
-    <button id="sendChat" type="button">Send</button>
-  </div>
+  <div id="chatOverlay" class="hidden"></div>
 
   <script type="module">
     import { initProfile } from "../controllers/profileController.js"
-    import { initChat } from "../controllers/chatController.js"
     initProfile()
-    initChat()
   </script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Color Detector</title>
+
+<link rel="stylesheet" href="../../styles/global.css">
+
+<style>
+  body {
+    font-family: system-ui;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .camera-app {
+    width: 360px;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  }
+
+  video {
+    width: 100%;
+    border-radius: 10px;
+    background: black;
+  }
+
+  #swatch {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  #color-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  #color-meta {
+    font-size: 14px;
+    color: #555;
+  }
+
+  #status {
+    font-size: 12px;
+    color: gray;
+    margin-top: 6px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="camera-app">
+
+  <video id="video" autoplay playsinline></video>
+
+  <!-- hidden processing canvas -->
+  <canvas id="canvas" style="display:none;"></canvas>
+
+  <!-- UI OUTPUT -->
+  <div id="swatch"></div>
+  <div id="color-name">Waiting...</div>
+  <div id="color-meta"></div>
+  <div id="status"></div>
+
+  <button id="freezeBtn" type="button">Freeze</button>
+
+</div>
+
+<!-- IMPORTANT: load ntc BEFORE controller -->
+<script src="../shared/ntc.js"></script>
+
+<script type="module">
+  import { initCamera } from "../controllers/cameraController.js"
+  initCamera()
+</script>
+
+</body>
+</html>
