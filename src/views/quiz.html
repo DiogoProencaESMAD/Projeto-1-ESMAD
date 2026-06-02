@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+
+<style>
+  body {
+    font-family: system-ui;
+    padding: 20px;
+    background: #f4f6f8;
+  }
+
+  .quiz-box {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  }
+
+  .question {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .answers button {
+    display: block;
+    width: 100%;
+    margin: 6px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+  #result {
+    margin-top: 12px;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+
+  <div id="question" class="question">Loading...</div>
+
+  <div id="answers" class="answers"></div>
+
+  <div id="result"></div>
+
+  <button id="nextBtn">Next</button>
+
+</div>
+
+<script type="module">
+  import { initQuiz } from "../controllers/quizController.js"
+  initQuiz()
+</script>
+
+</body>
+</html>

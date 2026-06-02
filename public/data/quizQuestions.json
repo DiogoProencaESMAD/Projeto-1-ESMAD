@@ -1,0 +1,256 @@
+[
+  {
+    "question": "What color is the sky on a clear day?",
+    "answers": ["Blue", "Green", "Red", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color are bananas when ripe?",
+    "answers": ["Blue", "Yellow", "Purple", "Black"],
+    "correct": 1
+  },
+  {
+    "question": "What color is grass usually?",
+    "answers": ["Red", "Green", "Blue", "Orange"],
+    "correct": 1
+  },
+  {
+    "question": "What color is snow?",
+    "answers": ["White", "Black", "Green", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is coal?",
+    "answers": ["White", "Black", "Yellow", "Blue"],
+    "correct": 1
+  },
+  {
+    "question": "What color is the sun often depicted as?",
+    "answers": ["Green", "Blue", "Yellow", "Purple"],
+    "correct": 2
+  },
+  {
+    "question": "What color are strawberries?",
+    "answers": ["Blue", "Red", "Green", "Yellow"],
+    "correct": 1
+  },
+  {
+    "question": "What color is an orange fruit?",
+    "answers": ["Orange", "Blue", "Pink", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color are most clouds?",
+    "answers": ["White", "Black", "Green", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a stop sign?",
+    "answers": ["Green", "Yellow", "Red", "Blue"],
+    "correct": 2
+  },
+
+  {
+    "question": "What color is the ocean often seen as?",
+    "answers": ["Blue", "Red", "Brown", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is chocolate?",
+    "answers": ["Brown", "Blue", "Green", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color are lemons?",
+    "answers": ["Yellow", "Blue", "Red", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a ripe tomato?",
+    "answers": ["Red", "Blue", "Green", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a cucumber?",
+    "answers": ["Green", "Red", "Yellow", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is fire usually shown as?",
+    "answers": ["Blue", "Red", "Black", "Green"],
+    "correct": 1
+  },
+  {
+    "question": "What color is a watermelon inside?",
+    "answers": ["Red", "Blue", "White", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color are most leaves in summer?",
+    "answers": ["Green", "Red", "Blue", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is ink from a pen usually?",
+    "answers": ["Black", "Green", "Pink", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a typical taxi in New York?",
+    "answers": ["Yellow", "Blue", "Green", "Red"],
+    "correct": 0
+  },
+
+  {
+    "question": "What color is night sky usually?",
+    "answers": ["Black", "Yellow", "Green", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is milk?",
+    "answers": ["White", "Black", "Blue", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is gold?",
+    "answers": ["Yellow", "Blue", "Black", "Green"],
+    "correct": 0
+  },
+  {
+    "question": "What color is silver?",
+    "answers": ["Gray", "Red", "Green", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a pineapple?",
+    "answers": ["Yellow", "Blue", "Red", "Green"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a blueberry?",
+    "answers": ["Blue", "Red", "Green", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a grape often?",
+    "answers": ["Purple", "Yellow", "Green", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is dirt?",
+    "answers": ["Brown", "Blue", "Green", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a zebra?",
+    "answers": ["Black and white", "Green", "Red", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a flamingo?",
+    "answers": ["Pink", "Blue", "Green", "Black"],
+    "correct": 0
+  },
+
+  {
+    "question": "What color is lava?",
+    "answers": ["Orange", "Blue", "Green", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is ice?",
+    "answers": ["Blue-white", "Red", "Green", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a carrot?",
+    "answers": ["Orange", "Blue", "Green", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a pumpkin?",
+    "answers": ["Orange", "Blue", "Green", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a pear?",
+    "answers": ["Green", "Blue", "Red", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is ink used in most printers?",
+    "answers": ["Black", "Pink", "Yellow", "Orange"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a rose usually?",
+    "answers": ["Red", "Blue", "Green", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is the earth from space?",
+    "answers": ["Blue", "Red", "Yellow", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a pencil lead?",
+    "answers": ["Gray", "Blue", "Green", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a ghost often depicted as?",
+    "answers": ["White", "Black", "Red", "Blue"],
+    "correct": 0
+  },
+
+  {
+    "question": "What color is a football field?",
+    "answers": ["Green", "Blue", "Red", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is most blood?",
+    "answers": ["Red", "Blue", "Green", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a banana peel?",
+    "answers": ["Yellow", "Green", "Blue", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a polar bear?",
+    "answers": ["White", "Black", "Brown", "Gray"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a panda?",
+    "answers": ["Black and white", "Green", "Red", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a rainbow primary band often showing first?",
+    "answers": ["Red", "Blue", "Green", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a typical apple?",
+    "answers": ["Red", "Blue", "Green", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is asphalt?",
+    "answers": ["Black", "Green", "Red", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a penguin?",
+    "answers": ["Black and white", "Green", "Red", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is sand on a beach usually?",
+    "answers": ["Beige", "Blue", "Green", "Red"],
+    "correct": 0
+  }
+]
