@@ -2,8 +2,14 @@ export async function loadQuizQuestions() {
   const res = await fetch("/public/data/quizQuestions.json")
 
   if (!res.ok) {
-    throw new Error("Failed to load quiz questions")
+    throw new Error("Quiz data not found")
   }
 
-  return await res.json()
+  const data = await res.json()
+
+  if (!Array.isArray(data) || data.length === 0) {
+    throw new Error("Quiz data is empty or invalid")
+  }
+
+  return data
 }

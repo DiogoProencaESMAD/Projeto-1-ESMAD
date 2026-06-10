@@ -1,231 +1,469 @@
 {
+  "users": [
+    {
+      "username": "admin",
+      "password": "12345",
+      "role": "admin",
+      "xp": 1360,
+      "level": 14,
+      "id": "2CwiGg8kAvI",
+      "daltonismType": "protanopia",
+      "profileImage": "/public/avatars/avatar-sky.svg",
+      "colorScheme": "auto",
+      "quizzesCompleted": 1,
+      "perfectQuizzes": 0,
+      "highScore": 9
+    },
+    {
+      "username": "Diogo",
+      "password": "1234",
+      "role": "user",
+      "xp": 420,
+      "level": 5,
+      "id": "Nq3iC9VV5vU",
+      "daltonismType": "deuteranopia",
+      "quizzesCompleted": 3,
+      "perfectQuizzes": 1,
+      "highScore": 10,
+      "colorScheme": "auto",
+      "profileImage": "/public/avatars/avatar-mono.svg",
+      "displayMode": "dark"
+    },
+    {
+      "username": "Maria",
+      "password": "maria",
+      "role": "user",
+      "xp": 90,
+      "level": 1,
+      "daltonismType": "monochromacy",
+      "colorScheme": "tritanopia",
+      "profileImage": "/public/avatars/avatar-mono.svg",
+      "quizzesCompleted": 1,
+      "perfectQuizzes": 0,
+      "highScore": 9,
+      "id": "oC8lFZ1PWBM"
+    },
+    {
+      "username": "Ribeiro",
+      "password": "4455",
+      "role": "user",
+      "xp": 100,
+      "level": 2,
+      "daltonismType": "normal",
+      "colorScheme": "deuteranopia",
+      "profileImage": "/public/avatars/avatar-mono.svg",
+      "quizzesCompleted": 1,
+      "perfectQuizzes": 1,
+      "highScore": 10,
+      "id": "BZbJkiawaTc"
+    },
+    {
+      "username": "SaboneteQuente",
+      "password": "suma33",
+      "role": "user",
+      "xp": 100,
+      "level": 2,
+      "daltonismType": "normal",
+      "colorScheme": "monochromacy",
+      "profileImage": "/public/avatars/avatar-lilac.svg",
+      "quizzesCompleted": 1,
+      "perfectQuizzes": 1,
+      "highScore": 10,
+      "id": "i8xdTh9MT8Q"
+    }
+  ],
   "messages": [
     {
-      "user": "admin ",
-      "text": "Oscar andrade",
-      "id": "qa0Tq-V7Lic"
+      "user": "testuser",
+      "text": "hello",
+      "timestamp": "2026-06-09T14:00:00.000Z",
+      "id": "vvd42EQwVDc"
     },
     {
-      "user": "admin ",
-      "text": "Luis Pinto",
-      "id": "OG_1qnWavCI"
+      "user": "admin",
+      "text": "hello",
+      "timestamp": "2026-06-09T14:20:47.355Z",
+      "id": "zhokzax93WQ"
     },
     {
-      "user": "admin ",
-      "text": "Afonso Costa",
-      "id": "WZ1hXxnSe6M"
+      "user": "admin",
+      "text": "Joao Carlos andrade",
+      "timestamp": "2026-06-09T14:20:58.136Z",
+      "id": "6XEvWjSLp3Y"
     },
     {
-      "user": "admin ",
-      "text": "Diogo Medeiros",
-      "id": "teERFO_PQks"
+      "user": "Diogo",
+      "text": "yolk",
+      "timestamp": "2026-06-10T16:05:26.247Z",
+      "id": "nXc66ZRbgE0"
     },
     {
-      "user": "admin ",
-      "text": "yolo",
-      "id": "H_nKOyXUG1U"
+      "user": "Diogo",
+      "text": "yyyyyy",
+      "timestamp": "2026-06-10T16:39:31.328Z",
+      "id": "evtd-SOmYDg"
     },
     {
-      "user": "admin ",
-      "text": "1234",
-      "id": "WLMbD9-zCGo"
+      "user": "Diogo",
+      "text": "hehehe",
+      "timestamp": "2026-06-10T17:12:31.578Z",
+      "id": "XzTUM546CwE"
     },
     {
-      "user": "admin ",
-      "text": "33333",
-      "id": "1_yNw6QOr6E"
+      "user": "Maria",
+      "text": "hello!",
+      "timestamp": "2026-06-10T17:20:59.334Z",
+      "id": "-qRavdtyzcU"
     },
     {
-      "user": "admin ",
-      "text": "b oom",
-      "id": "6KxbKEESGY0"
+      "user": "Ribeiro",
+      "text": "yo bros I just won the quiz",
+      "timestamp": "2026-06-10T18:23:18.039Z",
+      "id": "fhXOapbhMLY"
     },
     {
-      "user": "admin ",
-      "text": "444444",
-      "id": "bEK-3l-rhHY"
+      "user": "SaboneteQuente",
+      "text": "patati patata",
+      "timestamp": "2026-06-10T18:34:05.929Z",
+      "id": "rX0Z7mfHBHw"
+    }
+  ],
+  "achievements": [
+    {
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "first_quiz",
+      "title": "First Steps",
+      "description": "Completed your first quiz",
+      "unlockedAt": 1781107575395,
+      "id": "9BBy5l1C5jI"
     },
     {
-      "user": "admin ",
-      "text": "999999",
-      "id": "NiUlbtx6SN4"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "apprentice",
+      "title": "Color Apprentice",
+      "description": "Scored at least 5 points",
+      "unlockedAt": 1781108506705,
+      "id": "-AlarkG6kJ0"
     },
     {
-      "user": "admin ",
-      "text": "1234567890",
-      "id": "4UwmqNJ2Gec"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "sharp_eye",
+      "title": "Sharp Eye",
+      "description": "Scored at least 7 points in a quiz",
+      "unlockedAt": 1781110531028,
+      "id": "M2F9AwFZhpw"
     },
     {
-      "user": "admin ",
-      "text": "rrrtttt",
-      "id": "7Ukeg8_jzRc"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "almost_perfect",
+      "title": "Almost Perfect",
+      "description": "Scored at least 9 points in a quiz",
+      "unlockedAt": 1781110531039,
+      "id": "Cwr4ULyJetI"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "s3TMAMv8l3M"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "xp_50",
+      "title": "Getting Started",
+      "description": "Reached 50 XP",
+      "unlockedAt": 1781110531047,
+      "id": "rMGOu_68cfM"
     },
     {
-      "user": "admin ",
-      "text": "99999",
-      "id": "0l5KxWyJelc"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "xp_100",
+      "title": "Hundred Club",
+      "description": "Reached 100 XP",
+      "unlockedAt": 1781110531050,
+      "id": "IKYXatu6Y98"
     },
     {
-      "user": "admin ",
-      "text": "Diogo Medeiros",
-      "id": "MrKTTRTyz0I"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "level_2",
+      "title": "Level Up",
+      "description": "Reached level 2",
+      "unlockedAt": 1781110531053,
+      "id": "gjfjh-_NlMM"
     },
     {
-      "user": "admin ",
-      "text": "eeeeeee",
-      "id": "CRHEblslSUU"
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "xp_250",
+      "title": "XP Collector",
+      "description": "Reached 250 XP",
+      "unlockedAt": 1781111374330,
+      "id": "7ixgsyZIL68"
     },
     {
-      "user": "admin ",
-      "text": "rrrrr",
-      "id": "JwpNe871Hfw"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "first_quiz",
+      "title": "First Steps",
+      "description": "Completed your first quiz",
+      "unlockedAt": 1781111609105,
+      "id": "pWWJfyH4INE"
     },
     {
-      "user": "admin ",
-      "text": "4444",
-      "id": "K40_azvk9UI"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "apprentice",
+      "title": "Color Apprentice",
+      "description": "Scored at least 5 points",
+      "unlockedAt": 1781111609114,
+      "id": "y25iOqkhc00"
     },
     {
-      "user": "admin ",
-      "text": "eeee",
-      "id": "wnFUCQKyAYQ"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "sharp_eye",
+      "title": "Sharp Eye",
+      "description": "Scored at least 7 points in a quiz",
+      "unlockedAt": 1781111609119,
+      "id": "XA8_RbL3cO4"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "J0Pm1Dbm0Hg"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "almost_perfect",
+      "title": "Almost Perfect",
+      "description": "Scored at least 9 points in a quiz",
+      "unlockedAt": 1781111609124,
+      "id": "rRkLloBk35Y"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "WHjD3fzI9bU"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "xp_50",
+      "title": "Getting Started",
+      "description": "Reached 50 XP",
+      "unlockedAt": 1781111609134,
+      "id": "i9Wyiggc9rI"
     },
     {
-      "user": "admin ",
-      "text": "eeee",
-      "id": "Wobon_AGsH8"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "xp_100",
+      "title": "Hundred Club",
+      "description": "Reached 100 XP",
+      "unlockedAt": 1781111609137,
+      "id": "X5PlZu8D7P8"
     },
     {
-      "user": "admin ",
-      "text": "2323323",
-      "id": "hDD7LeWEUtA"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "xp_250",
+      "title": "XP Collector",
+      "description": "Reached 250 XP",
+      "unlockedAt": 1781111609140,
+      "id": "IjJA-iv8f1U"
     },
     {
-      "user": "admin ",
-      "text": "23232332",
-      "id": "S3WlfxyTPiw"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "xp_500",
+      "title": "XP Machine",
+      "description": "Reached 500 XP",
+      "unlockedAt": 1781111609143,
+      "id": "AYpjwgJiIY0"
     },
     {
-      "user": "admin ",
-      "text": "eeee",
-      "id": "vDIgrfrNvK4"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "level_2",
+      "title": "Level Up",
+      "description": "Reached level 2",
+      "unlockedAt": 1781111609146,
+      "id": "cAB8ef-qKSw"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "dO8hDpaBNwU"
+      "userId": "2CwiGg8kAvI",
+      "achievementId": "level_5",
+      "title": "Rising Star",
+      "description": "Reached level 5",
+      "unlockedAt": 1781111609149,
+      "id": "zcReG8rVJHQ"
     },
     {
-      "user": "admin ",
-      "text": "eeeeee",
-      "id": "ND3hxaCPltk"
+      "userId": "oC8lFZ1PWBM",
+      "achievementId": "first_quiz",
+      "title": "First Steps",
+      "description": "Completed your first quiz",
+      "unlockedAt": 1781112110681,
+      "id": "as1bvNuYHcg"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "KNBjsBnhj8U"
+      "userId": "oC8lFZ1PWBM",
+      "achievementId": "apprentice",
+      "title": "Color Apprentice",
+      "description": "Scored at least 5 points",
+      "unlockedAt": 1781112110686,
+      "id": "cKHZ5sZOkiY"
     },
     {
-      "user": "admin ",
-      "text": "eeeeeee",
-      "id": "KK3I79PkqhE"
+      "userId": "oC8lFZ1PWBM",
+      "achievementId": "sharp_eye",
+      "title": "Sharp Eye",
+      "description": "Scored at least 7 points in a quiz",
+      "unlockedAt": 1781112110690,
+      "id": "J_s7AWgq4FM"
     },
     {
-      "user": "admin ",
-      "text": "1234",
-      "id": "xjhginz6gOA"
+      "userId": "oC8lFZ1PWBM",
+      "achievementId": "almost_perfect",
+      "title": "Almost Perfect",
+      "description": "Scored at least 9 points in a quiz",
+      "unlockedAt": 1781112110694,
+      "id": "_X_fbEnjJsE"
     },
     {
-      "user": "admin ",
-      "text": "eeeeee",
-      "id": "8q-_k0ki2Q0"
+      "userId": "oC8lFZ1PWBM",
+      "achievementId": "xp_50",
+      "title": "Getting Started",
+      "description": "Reached 50 XP",
+      "unlockedAt": 1781112110697,
+      "id": "bLxJ-r8vfuk"
     },
     {
-      "user": "admin ",
-      "text": "eeeeee",
-      "id": "4XaEdTe2grA"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "first_quiz",
+      "title": "First Steps",
+      "description": "Completed your first quiz",
+      "unlockedAt": 1781115781006,
+      "id": "Lqt9mcE4IGw"
     },
     {
-      "user": "admin ",
-      "text": "34343434",
-      "id": "7ylaqYmVOGo"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "apprentice",
+      "title": "Color Apprentice",
+      "description": "Scored at least 5 points",
+      "unlockedAt": 1781115781024,
+      "id": "4J4pF2S_07c"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "N_0Ad7pBkhQ"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "sharp_eye",
+      "title": "Sharp Eye",
+      "description": "Scored at least 7 points in a quiz",
+      "unlockedAt": 1781115781034,
+      "id": "j1vqiFIttBY"
     },
     {
-      "user": "admin ",
-      "text": "eeeeeee",
-      "id": "bz67W6Oepv0"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "almost_perfect",
+      "title": "Almost Perfect",
+      "description": "Scored at least 9 points in a quiz",
+      "unlockedAt": 1781115781038,
+      "id": "vzqIQYN0-JY"
     },
     {
-      "user": "admin ",
-      "text": "O Afonso e gay",
-      "id": "MWGYvAG91zo"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "master",
+      "title": "Color Master",
+      "description": "Perfect quiz score",
+      "unlockedAt": 1781115781045,
+      "id": "HOKPmqaz9Dc"
     },
     {
-      "user": "admin ",
-      "text": "Luis Pinto",
-      "id": "cDkhJUx423o"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "xp_50",
+      "title": "Getting Started",
+      "description": "Reached 50 XP",
+      "unlockedAt": 1781115781051,
+      "id": "MKR0miOH_yQ"
     },
     {
-      "user": "admin ",
-      "text": "Diogo Medeiros",
-      "id": "hrzopNw5bqA"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "xp_100",
+      "title": "Hundred Club",
+      "description": "Reached 100 XP",
+      "unlockedAt": 1781115781056,
+      "id": "jbdjHCUXiVA"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "7u7CpmM0heo"
+      "userId": "BZbJkiawaTc",
+      "achievementId": "level_2",
+      "title": "Level Up",
+      "description": "Reached level 2",
+      "unlockedAt": 1781115781063,
+      "id": "IXrAKHNQ-7w"
     },
     {
-      "user": "admin ",
-      "text": "porto",
-      "id": "uccnUV2bbY8"
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "first_quiz",
+      "title": "First Steps",
+      "description": "Completed your first quiz",
+      "unlockedAt": 1781116389042,
+      "id": "aFJFTKe1-lM"
     },
     {
-      "user": "admin ",
-      "text": "e",
-      "id": "NMkc-P2md7c"
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "apprentice",
+      "title": "Color Apprentice",
+      "description": "Scored at least 5 points",
+      "unlockedAt": 1781116389053,
+      "id": "PP49YfJe1uk"
     },
     {
-      "user": "admin ",
-      "text": "e",
-      "id": "_bxFZrZX5H4"
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "sharp_eye",
+      "title": "Sharp Eye",
+      "description": "Scored at least 7 points in a quiz",
+      "unlockedAt": 1781116389059,
+      "id": "4TbyG2UqZzw"
     },
     {
-      "user": "admin ",
-      "text": "eeeee",
-      "id": "n5dYAQnMAnE"
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "almost_perfect",
+      "title": "Almost Perfect",
+      "description": "Scored at least 9 points in a quiz",
+      "unlockedAt": 1781116389065,
+      "id": "EScG-nehUTk"
     },
     {
-      "user": "admin ",
-      "text": "portoorototot",
-      "timestamp": "2026-05-28T14:32:09.087Z",
-      "id": "qCjYB2Q7n6o"
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "master",
+      "title": "Color Master",
+      "description": "Perfect quiz score",
+      "unlockedAt": 1781116389068,
+      "id": "90mChX0hzNk"
     },
     {
-      "user": "admin ",
-      "text": "brenfrica",
-      "timestamp": "2026-05-28T14:33:19.500Z",
-      "id": "F_nyuSlpqQY"
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "xp_50",
+      "title": "Getting Started",
+      "description": "Reached 50 XP",
+      "unlockedAt": 1781116389072,
+      "id": "Gtoa5n1gZIE"
+    },
+    {
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "xp_100",
+      "title": "Hundred Club",
+      "description": "Reached 100 XP",
+      "unlockedAt": 1781116389082,
+      "id": "P8TsM-cCFdE"
+    },
+    {
+      "userId": "i8xdTh9MT8Q",
+      "achievementId": "level_2",
+      "title": "Level Up",
+      "description": "Reached level 2",
+      "unlockedAt": 1781116389086,
+      "id": "MIrp_61UYuE"
+    },
+    {
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "master",
+      "title": "Color Master",
+      "description": "Perfect quiz score",
+      "unlockedAt": 1781119263178,
+      "id": "dl0tbjlg7YQ"
+    },
+    {
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "quiz_trio",
+      "title": "Quiz Trio",
+      "description": "Completed 3 quizzes",
+      "unlockedAt": 1781119263191,
+      "id": "M9hmEHInXjY"
+    },
+    {
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "level_5",
+      "title": "Rising Star",
+      "description": "Reached level 5",
+      "unlockedAt": 1781119263211,
+      "id": "7HAJdZHtvIM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

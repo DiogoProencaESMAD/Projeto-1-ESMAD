@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Lilac avatar">
+  <rect width="160" height="160" rx="36" fill="#b79cff"/>
+  <circle cx="80" cy="56" r="32" fill="#7a5bd6"/>
+  <circle cx="80" cy="62" r="26" fill="#ffe0cc"/>
+  <path d="M48 144c4-28 22-42 32-42s28 14 32 42" fill="#f5f1ff"/>
+  <circle cx="70" cy="60" r="3.5" fill="#372f4b"/>
+  <circle cx="90" cy="60" r="3.5" fill="#372f4b"/>
+  <path d="M69 74c4 5 18 5 22 0" fill="none" stroke="#372f4b" stroke-linecap="round" stroke-width="4"/>
+  <path d="M60 44c6-12 18-16 28-16 11 0 22 5 30 17-6-3-12-4-18-4-15 0-28 6-40 17-2-4-2-9 0-14z" fill="#7a5bd6"/>
+</svg>

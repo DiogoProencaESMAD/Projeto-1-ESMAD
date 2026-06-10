@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Huebly logo">
+  <defs>
+    <linearGradient id="huebly-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7a5cff"/>
+      <stop offset="50%" stop-color="#1a73e8"/>
+      <stop offset="100%" stop-color="#20b2aa"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="40" fill="url(#huebly-gradient)"/>
+  <circle cx="80" cy="80" r="42" fill="none" stroke="#ffffff" stroke-width="10" opacity="0.3"/>
+  <path d="M54 42v76M106 42v76M54 80h52" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="14"/>
+</svg>

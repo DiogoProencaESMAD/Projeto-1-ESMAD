@@ -1,32 +1,58 @@
-<form id="registerForm">
-  <h1>Create Account</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account</title>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+  <form id="registerForm">
+    <div class="brand-header">
+      <img class="brand-logo" src="/public/logo-huebly.svg" alt="Huebly logo">
+      <div>
+        <p class="brand-name">Huebly</p>
+        <p class="brand-tagline">Accessible color support</p>
+      </div>
+    </div>
+    <h1>Create Account</h1>
+    <p class="page-subtitle">
+      After creating your account, you will choose your vision type or take the daltonism test.
+    </p>
 
-  <input
-    id="registerUsername"
-    type="text"
-    placeholder="Username"
-    required
-  />
+    <input
+      id="registerUsername"
+      type="text"
+      placeholder="Username"
+      required
+    />
 
-  <input
-    id="registerPassword"
-    type="password"
-    placeholder="Password"
-    required
-  />
+    <input
+      id="registerPassword"
+      type="password"
+      placeholder="Password"
+      minlength="4"
+      required
+    />
 
-  <select id="role">
-    <option value="user">User</option>
-    <option value="admin">Admin</option>
-  </select>
+    <select id="role">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
 
-  <button type="submit">
-    Register
-  </button>
-</form>
+    <p class="inline-note center-text">You can still change your vision type, theme, username, and avatar later in settings.</p>
 
-<script type="module">
-  import { initRegister } from "../../controllers/authController.js"
+    <button type="submit">
+      Register
+    </button>
+  </form>
 
-  initRegister()
-</script>
+  <p style="text-align:center; margin: 16px 0;"><a href="./login.html">Already have an account?</a></p>
+
+  <script type="module">
+    import { initRegister } from "../../controllers/authController.js"
+
+    initRegister()
+  </script>
+</body>
+</html>

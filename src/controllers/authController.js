@@ -3,27 +3,28 @@ import {
   registerUser
 } from "../services/authService.js"
 
-export function initLogin() {
-  const form =
-    document.getElementById("loginForm")
+function redirectAfterLogin(user) {
+  if (user.daltonismType) {
+    window.location.href = "../profile.html"
+  } else {
+    window.location.href = "../onboarding/select-daltonism.html"
+  }
+}
 
-  form.addEventListener("submit", (e) => {
+export function initLogin() {
+  const form = document.getElementById("loginForm")
+  if (!form) return
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault()
 
-    const username =
-      document.getElementById("username").value
+    const username = document.getElementById("username")?.value
+    const password = document.getElementById("password")?.value
 
-    const password =
-      document.getElementById("password").value
-
-    const result = loginUser(
-      username,
-      password
-    )
+    const result = await loginUser(username, password)
 
     if (result.success) {
-      window.location.href =
-        "../onboarding/select-daltonism.html"
+      redirectAfterLogin(result.user)
     } else {
       alert(result.message)
     }
@@ -31,36 +32,21 @@ export function initLogin() {
 }
 
 export function initRegister() {
-  const form =
-    document.getElementById("registerForm")
+  const form = document.getElementById("registerForm")
+  if (!form) return
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault()
 
-    const username =
-      document.getElementById(
-        "registerUsername"
-      ).value
+    const username = document.getElementById("registerUsername")?.value
+    const password = document.getElementById("registerPassword")?.value
+    const role = document.getElementById("role")?.value
 
-    const password =
-      document.getElementById(
-        "registerPassword"
-      ).value
-
-    const role =
-      document.getElementById("role").value
-
-    const result = registerUser(
-      username,
-      password,
-      role
-    )
+    const result = await registerUser(username, password, role)
 
     if (result.success) {
-      alert("Account created")
-
-      window.location.href =
-        "./login.html"
+      alert("Account created. Please choose your vision type or run the test.")
+      window.location.href = "../onboarding/select-daltonism.html"
     } else {
       alert(result.message)
     }

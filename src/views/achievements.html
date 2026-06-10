@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Achievements</title>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+
+  <div class="achievements-container">
+    <div class="app-brand logo-only">
+      <img class="brand-logo small" src="/public/logo-huebly.svg" alt="Huebly logo">
+    </div>
+    <a class="back-link" href="./profile.html">← Back to Profile</a>
+
+    <h2>Achievements</h2>
+    <div id="xpText" style="margin-bottom:8px;"></div>
+
+    <div class="xp-track">
+      <div id="xpBar"></div>
+    </div>
+
+    <hr>
+
+    <div id="achievementsList">Loading...</div>
+  </div>
+
+  <div id="chatOverlay" class="hidden"></div>
+  <button id="goChat" type="button" class="chat-toggle">Chat</button>
+
+  <script type="module">
+    import { initAchievements } from "../controllers/achievementController.js"
+    initAchievements()
+  </script>
+</body>
+</html>

@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <title>Select Vision Type</title>
+  <link rel="stylesheet" href="/styles/global.css">
 </head>
 
 <body>
-  <h1>Select your vision type</h1>
+  <div class="app-brand logo-only">
+    <img class="brand-logo small" src="/public/logo-huebly.svg" alt="Huebly logo">
+  </div>
+  <h1 class="center-text">Select your vision type</h1>
+  <p class="page-subtitle">
+    Choose the closest option manually or run the daltonism test for an estimated result.
+  </p>
+  <p class="center-text"><a href="../profile.html">← Back to Profile</a></p>
 
   <form id="daltonismForm">
     <select id="daltonismType">
@@ -15,10 +23,25 @@
       <option value="deuteranopia">Deuteranopia</option>
       <option value="tritanopia">Tritanopia</option>
       <option value="monochromacy">Monochromacy</option>
+      <option value="take-test">Take a daltonism test</option>
     </select>
 
     <button type="submit">Continue</button>
   </form>
+
+  <div id="daltonismTestPanel" class="test-panel hidden">
+    <h2>Daltonism Test</h2>
+    <p id="testProgress"></p>
+    <canvas id="testPlate" class="test-plate" width="320" height="320"></canvas>
+    <p id="testQuestionText">What number do you see?</p>
+    <div id="testAnswers" class="test-actions"></div>
+    <div id="testResult" class="test-result hidden"></div>
+    <div class="test-actions">
+      <button id="useEstimatedTypeBtn" type="button" class="hidden">Use estimated result</button>
+      <button id="restartTestBtn" type="button" class="hidden">Run test again</button>
+      <button id="backToSelectionBtn" type="button">Back to manual selection</button>
+    </div>
+  </div>
 
   <script type="module">
     import { initDaltonism } from "../../controllers/onboardingController.js"

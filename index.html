@@ -4,31 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>App Loading...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- FOUC -->
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: "Outfit", sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      background: #f4f6f8;
+    }
+
+    .loading-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #333;
+      margin: 0;
+    }
+
+    strong {
+      font-size: 1.5rem;
+      color: #111;
     }
   </style>
 </head>
 
 <body>
-  <p>Loading...</p>
+  <div class="loading-brand">
+    <img src="/public/logo-huebly.svg" alt="Huebly logo">
+    <strong>Huebly</strong>
+  </div>
+  <p>Loading Huebly...</p>
 
   <script>
-     // ENTRY POINT CONTROLLER 
-
-    // Clear session each time if professor wants strict login
-    localStorage.removeItem("currentUser");
-
-    // Always go to login page
-    window.location.replace("./src/views/auth/login.html");
+    window.location.replace("./src/views/auth/login.html")
   </script>
 </body>
 </html>

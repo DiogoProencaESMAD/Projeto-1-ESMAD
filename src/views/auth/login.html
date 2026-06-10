@@ -1,31 +1,50 @@
-<form id="loginForm">
-  <h1>Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+  <form id="loginForm">
+    <div class="brand-header">
+      <img class="brand-logo" src="/public/logo-huebly.svg" alt="Huebly logo">
+      <div>
+        <p class="brand-name">Huebly</p>
+        <p class="brand-tagline">Accessible color support</p>
+      </div>
+    </div>
+    <h1>Login</h1>
+    <p class="page-subtitle">
+      Sign in to continue to your profile, quiz, achievements, and camera tools.
+    </p>
 
-  <input
-    id="username"
-    type="text"
-    placeholder="Username"
-    required
-  />
+    <input
+      id="username"
+      type="text"
+      placeholder="Username"
+      required
+    />
 
-  <input
-    id="password"
-    type="password"
-    placeholder="Password"
-    required
-  />
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+      required
+    />
 
-  <button type="submit">
-    Login
-  </button>
-</form>
+    <button type="submit">
+      Login
+    </button>
+  </form>
 
-<a href="./register.html">
-  Create account
-</a>
+  <p class="auth-note">New accounts will be asked to choose a vision type or take the daltonism test after registration.</p>
+  <p style="text-align:center; margin: 16px 0;"><a href="./register.html">Create account</a></p>
 
-<script type="module">
-  import { initLogin } from "../../controllers/authController.js"
-
-  initLogin()
-</script>
+  <script type="module">
+    import { initLogin } from "../../controllers/authController.js"
+    initLogin()
+  </script>
+</body>
+</html>

@@ -1,65 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Quiz</title>
-
-<style>
-  body {
-    font-family: system-ui;
-    padding: 20px;
-    background: #f4f6f8;
-  }
-
-  .quiz-box {
-    max-width: 500px;
-    margin: auto;
-    background: white;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-  }
-
-  .question {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .answers button {
-    display: block;
-    width: 100%;
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-  }
-
-  #result {
-    margin-top: 12px;
-    font-weight: bold;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="/styles/global.css">
 </head>
-
 <body>
 
-<div class="quiz-box">
+  <div class="quiz-box">
+    <div class="app-brand logo-only">
+      <img class="brand-logo small" src="/public/logo-huebly.svg" alt="Huebly logo">
+    </div>
+    <a class="back-link" href="./profile.html">← Back to Profile</a>
 
-  <div id="question" class="question">Loading...</div>
+    <div id="question" class="question">Loading...</div>
+    <div id="answers" class="answers"></div>
+    <div id="result"></div>
+    <button id="nextBtn" type="button">Next</button>
+  </div>
 
-  <div id="answers" class="answers"></div>
+  <div id="chatOverlay" class="hidden"></div>
+  <button id="goChat" type="button" class="chat-toggle">Chat</button>
 
-  <div id="result"></div>
-
-  <button id="nextBtn">Next</button>
-
-</div>
-
-<script type="module">
-  import { initQuiz } from "../controllers/quizController.js"
-  initQuiz()
-</script>
-
+  <script type="module">
+    import { initQuiz } from "../controllers/quizController.js"
+    initQuiz()
+  </script>
 </body>
 </html>

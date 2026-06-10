@@ -252,5 +252,255 @@
     "question": "What color is sand on a beach usually?",
     "answers": ["Beige", "Blue", "Green", "Red"],
     "correct": 0
+  },
+  {
+    "question": "What color is broccoli?",
+    "answers": ["Green", "Purple", "Blue", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is an egg yolk?",
+    "answers": ["Yellow", "Black", "Blue", "Brown"],
+    "correct": 0
+  },
+  {
+    "question": "What color is cooked salmon?",
+    "answers": ["Pink", "Green", "Blue", "Gray"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a traffic light for go?",
+    "answers": ["Green", "Red", "Blue", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a traffic light for caution?",
+    "answers": ["Yellow", "Purple", "Black", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a traffic light for stop?",
+    "answers": ["Red", "Blue", "Orange", "Green"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a school bus in many countries?",
+    "answers": ["Yellow", "Blue", "Green", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is mint ice cream often shown as?",
+    "answers": ["Green", "Red", "Brown", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is peanut butter?",
+    "answers": ["Brown", "Blue", "Purple", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is whipped cream?",
+    "answers": ["White", "Green", "Blue", "Orange"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a fire truck?",
+    "answers": ["Red", "Black", "Green", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a frog?",
+    "answers": ["Green", "Orange", "Pink", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a ripe cherry?",
+    "answers": ["Red", "Yellow", "Black", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a lime?",
+    "answers": ["Green", "Purple", "Brown", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is toasted bread usually?",
+    "answers": ["Brown", "Blue", "Gray", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a swan?",
+    "answers": ["White", "Black", "Green", "Orange"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a raven?",
+    "answers": ["Black", "Pink", "White", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is toothpaste often shown as in simple ads?",
+    "answers": ["White", "Brown", "Red", "Orange"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a ruby?",
+    "answers": ["Red", "Green", "Blue", "Gray"],
+    "correct": 0
+  },
+  {
+    "question": "What color is an emerald?",
+    "answers": ["Green", "Purple", "Black", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a sapphire?",
+    "answers": ["Blue", "Yellow", "Brown", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a canary?",
+    "answers": ["Yellow", "Black", "Blue", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is cotton?",
+    "answers": ["White", "Green", "Purple", "Orange"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a brick?",
+    "answers": ["Red", "Blue", "White", "Green"],
+    "correct": 0
+  },
+  {
+    "question": "What color is tree bark usually?",
+    "answers": ["Brown", "Pink", "Blue", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is honey?",
+    "answers": ["Golden yellow", "Blue", "Gray", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a dandelion flower?",
+    "answers": ["Yellow", "Black", "White", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a ladybug's shell usually?",
+    "answers": ["Red", "Brown", "Green", "Purple"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a tennis ball?",
+    "answers": ["Yellow-green", "Red", "Blue", "Gray"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a basketball?",
+    "answers": ["Orange", "Green", "Blue", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a soccer ball traditionally?",
+    "answers": ["Black and white", "Pink and blue", "Green and red", "Purple and yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is vanilla ice cream usually?",
+    "answers": ["White", "Orange", "Green", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is dark roast coffee?",
+    "answers": ["Brown", "Blue", "Yellow", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is ketchup?",
+    "answers": ["Red", "Purple", "Blue", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is mustard?",
+    "answers": ["Yellow", "Green", "White", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is mayonnaise?",
+    "answers": ["White", "Blue", "Brown", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a lobster after it is cooked?",
+    "answers": ["Red", "Black", "Green", "Yellow"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a peacock feather often highlighted as?",
+    "answers": ["Blue-green", "Gray", "Brown", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a sunflower?",
+    "answers": ["Yellow", "Purple", "Blue", "Black"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a watermelon rind mostly?",
+    "answers": ["Green", "Pink", "Orange", "White"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a marshmallow?",
+    "answers": ["White", "Black", "Red", "Green"],
+    "correct": 0
+  },
+  {
+    "question": "What color is smoke often shown as?",
+    "answers": ["Gray", "Yellow", "Purple", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a pearl?",
+    "answers": ["White", "Green", "Black", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is copper?",
+    "answers": ["Reddish brown", "Blue", "White", "Pink"],
+    "correct": 0
+  },
+  {
+    "question": "What color is turquoise?",
+    "answers": ["Blue-green", "Black", "Orange", "Brown"],
+    "correct": 0
+  },
+  {
+    "question": "What color is ivory?",
+    "answers": ["Off-white", "Purple", "Green", "Red"],
+    "correct": 0
+  },
+  {
+    "question": "What color is charcoal?",
+    "answers": ["Dark gray", "Yellow", "Pink", "Blue"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a ripe plum often?",
+    "answers": ["Purple", "Green", "White", "Orange"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a raspberry?",
+    "answers": ["Red", "Blue", "Gray", "Green"],
+    "correct": 0
+  },
+  {
+    "question": "What color is a robin's egg often known as?",
+    "answers": ["Blue", "Red", "Black", "Yellow"],
+    "correct": 0
   }
 ]
