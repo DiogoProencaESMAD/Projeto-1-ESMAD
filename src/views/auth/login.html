@@ -1,50 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="/styles/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- OUTFIT FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body>
-  <form id="loginForm">
-    <div class="brand-header">
-      <img class="brand-logo" src="/public/logo-huebly.svg" alt="Huebly logo">
-      <div>
-        <p class="brand-name">Huebly</p>
-        <p class="brand-tagline">Accessible color support</p>
-      </div>
+
+<body class="min-h-screen flex items-center justify-center px-6 bg-white">
+
+    <div class="w-full max-w-md">
+
+        <!-- LOGO -->
+        <div class="flex justify-center mb-10">
+            <img
+                src="../../../public/Huebly.png"
+                alt="Huebly"
+                class="w-56 sm:w-64 object-contain"
+            >
+        </div>
+
+        <!-- TITLE -->
+        <h1 class="text-center text-3xl font-semibold mb-10">
+            Log in
+        </h1>
+
+        <!-- FORM -->
+        <form id="loginForm" class="space-y-8">
+
+            <!-- USERNAME -->
+            <div class="relative">
+                <label
+                    for="username"
+                    class="absolute -top-3.5 left-4 bg-white px-2 text-lg font-semibold"
+                >
+                    Nome
+                </label>
+
+                <input
+                    id="username"
+                    type="text"
+                    placeholder="João Silva"
+                    class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
+                >
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="relative">
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    class="w-full h-14 pl-6 pr-12 rounded-[10px] border-2 border-black outline-none"                    
+                >
+
+                <button
+                    id="passwordToggle"
+                    type="button"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
+                    aria-label="Show password"
+                >
+                    <i data-lucide="eye"></i>
+                </button>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <button
+                id="loginButton"
+                type="submit"
+                class="w-full h-12 bg-sky-500 rounded-[10px] text-white text-xl font-semibold transition-transform active:scale-95"
+            >
+                Login
+            </button>
+
+            <!-- REGISTER LINK -->
+            <div class="text-center text-lg sm:text-xl">
+                <span>Ainda não tens conta? </span>
+
+                <button
+                    id="registerLink"
+                    type="button"
+                    class="text-sky-500 underline"
+                >
+                    Cria já
+                </button>
+            </div>
+
+        </form>
+
     </div>
-    <h1>Login</h1>
-    <p class="page-subtitle">
-      Sign in to continue to your profile, quiz, achievements, and camera tools.
-    </p>
 
-    <input
-      id="username"
-      type="text"
-      placeholder="Username"
-      required
-    />
+    <script type="module">
 
-    <input
-      id="password"
-      type="password"
-      placeholder="Password"
-      required
-    />
+        lucide.createIcons();
 
-    <button type="submit">
-      Login
-    </button>
-  </form>
+        import {
+            initLogin,
+            registerLinkHandler,
+            initPasswordToggle
+        } from "../../controllers/authController.js";
 
-  <p class="auth-note">New accounts will be asked to choose a vision type or take the daltonism test after registration.</p>
-  <p style="text-align:center; margin: 16px 0;"><a href="./register.html">Create account</a></p>
+        initLogin();
+        registerLinkHandler();
+        initPasswordToggle('password','passwordToggle');
 
-  <script type="module">
-    import { initLogin } from "../../controllers/authController.js"
-    initLogin()
-  </script>
+    </script>
+
 </body>
 </html>

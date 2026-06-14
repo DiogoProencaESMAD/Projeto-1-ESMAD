@@ -52,3 +52,51 @@ export function initRegister() {
     }
   })
 }
+
+export function registerLinkHandler() {
+  const registerLink = document.getElementById("registerLink")
+
+  registerLink.addEventListener("click", () => {
+
+    window.location.href =
+      "./register.html"
+  })
+}
+
+export function loginLinkHandler() {
+
+  const loginLink = document.getElementById("loginLink")
+
+  loginLink.addEventListener("click", () => {
+
+    console.log("Login link clicked")
+
+    window.location.href =
+      "./login.html"
+  })
+}
+
+export function initPasswordToggle(inputId, toggleId) {
+
+  const passwordInput = document.getElementById(inputId)
+  const passwordToggle = document.getElementById(toggleId)
+
+  if (!passwordInput || !passwordToggle) return
+
+  passwordToggle.addEventListener("click", () => {
+
+    const isHidden = passwordInput.type === "password"
+
+    passwordInput.type = isHidden ? "text" : "password"
+
+    passwordToggle.innerHTML = `<i data-lucide="${isHidden ? 'eye-off' : 'eye'}"></i>`
+    if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+      lucide.createIcons()
+    }
+
+    passwordToggle.setAttribute(
+      "aria-label",
+      isHidden ? "Hide password" : "Show password"
+    )
+  })
+}

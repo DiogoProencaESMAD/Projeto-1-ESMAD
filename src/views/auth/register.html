@@ -1,58 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create Account</title>
-  <link rel="stylesheet" href="/styles/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body>
-  <form id="registerForm">
-    <div class="brand-header">
-      <img class="brand-logo" src="/public/logo-huebly.svg" alt="Huebly logo">
-      <div>
-        <p class="brand-name">Huebly</p>
-        <p class="brand-tagline">Accessible color support</p>
-      </div>
+
+<body class="min-h-screen flex items-center justify-center px-6 py-10 bg-white">
+
+    <div class="w-full max-w-md">
+
+        <!-- LOGO -->
+        <div class="flex justify-center mb-8">
+            <img
+                src="../../../public/Huebly.png"
+                alt="Huebly"
+                class="w-56 sm:w-64 object-contain"
+            >
+        </div>
+
+        <!-- TITLE -->
+        <h1 class="text-center text-3xl font-semibold mb-10">
+            Criar Conta
+        </h1>
+
+        <!-- FORM -->
+        <form id="registerForm" class="space-y-8">
+
+            <!-- NAME -->
+            <div class="relative">
+                <label
+                    for="registerUsername"
+                    class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
+                >
+                    Nome
+                </label>
+
+                <input
+                    id="registerUsername"
+                    type="text"
+                    placeholder="João Silva"
+                    class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
+                >
+            </div>
+
+            <!-- EMAIL -->
+            <div class="relative">
+                <label
+                    for="registerEmail"
+                    class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
+                >
+                    Email
+                </label>
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    placeholder="joao.silva@example.com"
+                    class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
+                >
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="relative">
+                <label
+                    for="registerPassword"
+                    class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
+                >
+                    Password
+                </label>
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    class="w-full h-14 pl-6 pr-12 rounded-[10px] border-2 border-black outline-none"
+                >
+
+                <button
+                    id="passwordToggle"
+                    type="button"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
+                    aria-label="Show password"
+                >
+                    <i data-lucide="eye"></i>
+                </button>
+            </div>
+
+            
+            <!-- CREATE ACCOUNT BUTTON -->
+            <button
+                id="registerButton"
+                type="submit"
+                class="w-full h-12 bg-sky-500 rounded-[10px] text-white text-xl font-semibold transition-transform active:scale-95 hover:cursor-pointer"
+            >
+                Criar Conta
+            </button>
+
+            <!-- LOGIN LINK -->
+            <div class="text-center text-lg sm:text-xl">
+                <span>Já tens conta? </span>
+
+                <button
+                    id="loginLink"
+                    type="button"
+                    class="text-sky-500 underline"
+                >
+                    Entra já
+                </button>
+            </div>
+
+        </form>
+
     </div>
-    <h1>Create Account</h1>
-    <p class="page-subtitle">
-      After creating your account, you will choose your vision type or take the daltonism test.
-    </p>
 
-    <input
-      id="registerUsername"
-      type="text"
-      placeholder="Username"
-      required
-    />
+    <script type="module">
+        lucide.createIcons();
 
-    <input
-      id="registerPassword"
-      type="password"
-      placeholder="Password"
-      minlength="4"
-      required
-    />
+        import {
+            initRegister,
+            loginLinkHandler,
+            initPasswordToggle
+        } from "../../controllers/authController.js";
 
-    <select id="role">
-      <option value="user">User</option>
-      <option value="admin">Admin</option>
-    </select>
+        initRegister();
+        loginLinkHandler();
+        initPasswordToggle('registerPassword','passwordToggle');
+    </script>
 
-    <p class="inline-note center-text">You can still change your vision type, theme, username, and avatar later in settings.</p>
-
-    <button type="submit">
-      Register
-    </button>
-  </form>
-
-  <p style="text-align:center; margin: 16px 0;"><a href="./login.html">Already have an account?</a></p>
-
-  <script type="module">
-    import { initRegister } from "../../controllers/authController.js"
-
-    initRegister()
-  </script>
 </body>
 </html>

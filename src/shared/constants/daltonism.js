@@ -11,8 +11,7 @@ export const DALTONISM_OPTIONS = [
   { value: "protanopia", label: "Protanopia" },
   { value: "deuteranopia", label: "Deuteranopia" },
   { value: "tritanopia", label: "Tritanopia" },
-  { value: "monochromacy", label: "Monochromacy" },
-  { value: "take-test", label: "Take a daltonism test" }
+  { value: "monochromacy", label: "Monochromacy" }
 ]
 
 export const DALTONISM_THEMES = {

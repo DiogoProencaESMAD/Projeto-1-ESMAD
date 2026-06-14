@@ -70,6 +70,49 @@
       "perfectQuizzes": 1,
       "highScore": 10,
       "id": "i8xdTh9MT8Q"
+    },
+    {
+      "username": "afalc",
+      "password": "1234",
+      "role": "user",
+      "xp": 90,
+      "level": 1,
+      "daltonismType": "tritanopia",
+      "colorScheme": "auto",
+      "displayMode": "light",
+      "profileImage": "",
+      "quizzesCompleted": 1,
+      "perfectQuizzes": 0,
+      "highScore": 9,
+      "id": "HyiZRw8"
+    },
+    {
+      "username": "234fsdf",
+      "password": "1234",
+      "xp": 0,
+      "level": 1,
+      "daltonismType": "",
+      "colorScheme": "auto",
+      "displayMode": "light",
+      "profileImage": "",
+      "quizzesCompleted": 0,
+      "perfectQuizzes": 0,
+      "highScore": 0,
+      "id": "AUNrz2B"
+    },
+    {
+      "id": "5ee6",
+      "username": "afonso",
+      "password": "1234",
+      "xp": 0,
+      "level": 1,
+      "daltonismType": "",
+      "colorScheme": "auto",
+      "displayMode": "light",
+      "profileImage": "",
+      "quizzesCompleted": 0,
+      "perfectQuizzes": 0,
+      "highScore": 0
     }
   ],
   "messages": [
@@ -464,6 +507,14 @@
       "description": "Reached level 5",
       "unlockedAt": 1781119263211,
       "id": "7HAJdZHtvIM"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "first_quiz",
+      "title": "First Steps",
+      "description": "Completed your first quiz",
+      "unlockedAt": 1781380708783,
+      "id": "Qaj0_eD"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

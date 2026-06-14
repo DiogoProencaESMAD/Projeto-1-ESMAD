@@ -6,6 +6,8 @@ import { applyDaltonismTheme } from "../shared/utils/theme.js"
 export async function initDaltonism() {
   const form = document.getElementById("daltonismForm")
   const select = document.getElementById("daltonismType")
+  const startTestBtn =
+    document.getElementById("startTestBtn") || document.getElementById("startTest")
   const testPanel = document.getElementById("daltonismTestPanel")
   const testPlate = document.getElementById("testPlate")
   const testProgress = document.getElementById("testProgress")
@@ -38,9 +40,32 @@ export async function initDaltonism() {
 
   applyDaltonismTheme(user)
 
-  if (user.daltonismType) {
-    select.value = user.daltonismType
+  const visionInputs = Array.from(
+    document.querySelectorAll('input[name="visionType"]')
+  )
+
+  function syncVisionSelection(value) {
+    const selectedValue = value || select.value || "normal"
+
+    select.value = selectedValue
+
+    visionInputs.forEach((input) => {
+      const inputValue = input.dataset.value || input.value
+      input.checked = inputValue === selectedValue
+    })
   }
+
+  if (user.daltonismType) {
+    syncVisionSelection(user.daltonismType)
+  } else {
+    syncVisionSelection(select.value)
+  }
+
+  visionInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      syncVisionSelection(input.dataset.value || input.value)
+    })
+  })
 
   const ctx = testPlate.getContext("2d")
   let currentQuestionIndex = 0
@@ -188,30 +213,48 @@ export async function initDaltonism() {
     useEstimatedTypeBtn.classList.add("hidden")
     restartTestBtn.classList.add("hidden")
 
-    const answerOptions = [
-      ...question.choices,
-      "I don't see a number",
-      "I don't know"
-    ]
+    const answerOptions = [...question.choices]
+    const fallbackOptions = ["I don't see a number", "I don't know"]
 
     testAnswers.innerHTML = ""
+    testAnswers.className = "flex flex-col gap-3"
+
+    const topRow = document.createElement("div")
+    topRow.className = "grid grid-cols-3 gap-3"
+
     answerOptions.forEach((answerLabel) => {
       const button = document.createElement("button")
       button.type = "button"
+      button.className =
+        "h-12 bg-sky-500 text-white rounded-xl font-medium transition active:scale-95"
+      button.textContent = answerLabel
+      button.addEventListener("click", () => {
+        answerQuestion(answerLabel)
+      })
+      topRow.appendChild(button)
+    })
+
+    const bottomRow = document.createElement("div")
+    bottomRow.className = "grid grid-cols-2 gap-3"
+
+    fallbackOptions.forEach((answerLabel) => {
+      const button = document.createElement("button")
+      button.type = "button"
+      button.className =
+        "h-12 bg-sky-100 text-sky-900 rounded-xl font-medium transition active:scale-95"
       button.textContent = answerLabel
       button.addEventListener("click", () => {
         if (answerLabel === "I don't see a number") {
           answerQuestion("none")
           return
         }
-        if (answerLabel === "I don't know") {
-          answerQuestion("unknown")
-          return
-        }
-        answerQuestion(answerLabel)
+        answerQuestion("unknown")
       })
-      testAnswers.appendChild(button)
+      bottomRow.appendChild(button)
     })
+
+    testAnswers.appendChild(topRow)
+    testAnswers.appendChild(bottomRow)
   }
 
   function startTest() {
@@ -225,14 +268,14 @@ export async function initDaltonism() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault()
 
-    const type = select.value
-    if (type === "take-test") {
-      startTest()
-      return
-    }
-
-    await saveType(type)
+    await saveType(select.value)
   })
+
+  if (startTestBtn) {
+    startTestBtn.addEventListener("click", () => {
+      startTest()
+    })
+  }
 
   useEstimatedTypeBtn.addEventListener("click", async () => {
     if (!estimatedType) return
