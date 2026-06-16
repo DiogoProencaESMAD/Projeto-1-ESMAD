@@ -1,125 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <title>Profile</title>
-  <link rel="stylesheet" href="/styles/global.css">
-  <style>
-    .page-container {
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
 
-    #settingsBtn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 8px 12px;
-      border: 1px solid var(--border-color);
-      background: var(--secondary-bg);
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      width: auto;
-      color: var(--text-color);
-    }
+    <!-- TAILWIND -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    #settingsModal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--overlay-bg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    .settings-content {
-      background: var(--surface-bg);
-      padding: 20px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    }
+    <!-- LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-    .settings-content h3 {
-      margin-top: 0;
-      margin-bottom: 16px;
-    }
-
-    .settings-option {
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .settings-option:last-child {
-      border-bottom: none;
-    }
-
-    .settings-option > button {
-      width: 100%;
-      padding: 10px;
-      background: var(--primary-color);
-      color: var(--primary-text);
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .settings-option button:hover {
-      background: var(--primary-hover);
-    }
-
-    .settings-row {
-      display: grid;
-      gap: 8px;
-    }
-
-    .settings-avatar-preview {
-      width: 80px;
-      height: 80px;
-      margin: 4px auto 0;
-      font-size: 26px;
-    }
-
-    .settings-helper-link {
-      font-size: 14px;
-    }
-
-    #closeSettingsBtn {
-      float: right;
-      background: none;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 0;
-      width: auto;
-      color: var(--text-color);
-    }
-  </style>
 </head>
-<body>
-  <div class="page-container">
-    <div class="app-brand logo-only">
-      <img class="brand-logo small" src="/public/logo-huebly.svg" alt="Huebly logo">
-    </div>
-    <button id="settingsBtn" type="button">⚙️ Settings</button>
-    <h1 class="page-title">Profile</h1>
-    <div id="userInfo"></div>
-    <hr />
-    <button id="goCamera" type="button">Camera</button>
-    <button id="goQuiz" type="button">Quiz</button>
-    <button id="goChat" type="button">Chat</button>
-    <button id="goAchievements" type="button">Achievements</button>
-    <button id="logoutBtn" type="button" class="link-button">Logout</button>
-  </div>
+
+<body class="bg-gray-100 min-h-screen">
+  
+  <!-- HEADER -->
+    <header class="bg-sky-500 shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
+                <h1 class="sr-only">Huebly</h1>
+            </div>
+            <button
+                id="settingsBtn"
+                type="button"
+                aria-label="Configurações"
+                class="p-2 rounded-lg hover:bg-sky-400 transition"
+            >
+                <i data-lucide="settings" class="w-6 h-6 text-white"></i>
+            </button>
+        </div>
+    </header>
+
+<!-- CONTENT -->
+    <main class="max-w-md mx-auto px-4 py-6 pb-32 space-y-6">
+
+        <!-- PROFILE -->
+        <div id="userInfo" class="flex items-center gap-4"></div>
+
+        <!-- DALTONISM CARD -->
+        <section class="bg-sky-100 rounded-3xl p-6 shadow-sm">
+            <div class="flex justify-between items-start">
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                            <i data-lucide="eye" class="w-4 h-4 text-sky-500"></i>
+                        </div>
+                        <span class="text-sky-500 text-sm font-semibold">
+                            Your vision type
+                        </span>
+                    </div>
+                    <div id="daltonismType" class="text-2xl font-bold text-sky-500 mb-4" aria-live="polite"></div>
+                </div>
+                <div class="w-12 h-12 bg-green-100 border-2 border-sky-300 rounded-xl flex items-center justify-center">
+                    <i data-lucide="eye" class="w-6 h-6 text-green-600"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- XP CARD -->
+        <section class="bg-sky-100 rounded-3xl p-5 shadow-sm">
+            <div class="flex justify-between items-center mb-4">
+                <span class="uppercase text-sm font-semibold tracking-wide">
+                    Experience
+                </span>
+                <span>
+                    <strong id="xpValue" class="text-sky-500">0</strong>
+                    <span id="xpTotal" class="text-sky-400">/ 100 XP</span>
+                </span>
+            </div>
+            <div class="h-3 bg-white rounded-full overflow-hidden mb-5">
+                <div id="xpProgress" class="h-full bg-sky-500 rounded-full" style="width:0%"></div>
+            </div>
+            <div class="flex items-center justify-between">
+                <h3 class="uppercase text-sm font-medium tracking-wide text-sky-500">
+                    Achievements
+                </h3>
+                <button
+                    id="goAchievements"
+                    type="button"
+                    class="bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-6 py-3 rounded-lg transition"
+                >
+                    VIEW ALL
+                </button>
+            </div>
+        </section>
+    </main>
 
   <div id="chatOverlay" class="hidden"></div>
+
+  <!-- BOTTOM NAVIGATION -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-sky-500 border-t border-sky-400">
+        <div class="max-w-md mx-auto grid grid-cols-4 py-3">
+            
+            <!-- QUIZ BUTTON -->
+            <button
+                id="goQuiz"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="clipboard-list"></i>
+                <span class="text-xs font-bold">
+                    QUIZZ
+                </span>
+            </button>
+            
+            <!-- CAMERA BUTTON -->
+            <button
+                id="goCamera"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="camera"></i>
+                <span class="text-xs font-bold">
+                    CAMERA
+                </span>
+            </button>
+
+            <!-- PROFILE BUTTON -->
+            <button
+                href="./profile.html"
+                type="button"
+                class="flex flex-col items-center gap-1"
+            >
+                <div class="bg-sky-300 rounded-full p-2">
+                    <i data-lucide="user" class="text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-white">
+                    PROFILE
+                </span>
+            </button>
+
+            <!-- CHAT BUTTON -->
+            <button
+                id="goChat"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="message-square"></i>
+                <span class="text-xs font-bold">
+                    FORUM
+                </span>
+            </button>
+        </div>
+    </nav>
 
   <div id="settingsModal" class="hidden">
     <div class="settings-content">
@@ -164,6 +194,8 @@
 
   <script type="module">
     import { initProfile } from "../controllers/profileController.js"
+    lucide.createIcons();
+
     initProfile()
   </script>
 </body>

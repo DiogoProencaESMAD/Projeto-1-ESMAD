@@ -23,6 +23,7 @@ export async function initProfile() {
   const container = document.getElementById("userInfo")
   const goCamera = document.getElementById("goCamera")
   const goQuiz = document.getElementById("goQuiz")
+  const goChat = document.getElementById("goChat")
   const goAchievements = document.getElementById("goAchievements")
   const logoutBtn = document.getElementById("logoutBtn")
   const settingsBtn = document.getElementById("settingsBtn")
@@ -82,19 +83,22 @@ export async function initProfile() {
     const displayModeLabel = formatDisplayMode(profileUser?.displayMode || "light")
     const normalizedProfileImage = normalizeAvatarPath(profileUser?.profileImage)
     const avatarContent = normalizedProfileImage
-      ? `<img src="${escapeHtml(normalizedProfileImage)}" alt="Profile picture">`
-      : escapeHtml(getInitials(profileUser?.username))
+      ? `<img src="${normalizedProfileImage}" alt="Profile picture" class="w-full h-full object-cover">`
+      : `<div class="w-full h-full flex items-center justify-center text-2xl font-bold">${escapeHtml(getInitials(profileUser?.username))}</div>`
 
     container.innerHTML = `
-      <div class="profile-card">
-        <div class="profile-avatar">${avatarContent}</div>
-        <p><strong>Username:</strong> ${escapeHtml(profileUser.username || "Guest")}</p>
-        <p><strong>Role:</strong> ${escapeHtml(profileUser.role || "User")}</p>
-        <p><strong>Vision type:</strong> ${escapeHtml(visionType)}</p>
-        <p><strong>Color scheme:</strong> ${escapeHtml(colorSchemeLabel)}</p>
-        <p><strong>Display mode:</strong> ${escapeHtml(displayModeLabel)}</p>
-        <p><strong>Level:</strong> ${escapeHtml(profileUser.level || 1)}</p>
-        <p><strong>XP:</strong> ${escapeHtml(profileUser.xp || 0)}</p>
+      <div class="flex items-center gap-4">
+        <div class="w-24 h-24 rounded-full border-2 border-gray-700 overflow-hidden flex items-center justify-center bg-gray-200">
+          ${avatarContent}
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold">
+            ${escapeHtml(profileUser.username || "Guest")}
+            </h2>
+            <p class="text-xl text-gray-600 font-medium">
+              Nivel: ${escapeHtml(profileUser.level || 1)}
+            </p>
+        </div>
       </div>
     `
 
@@ -116,6 +120,22 @@ export async function initProfile() {
     }
 
     renderAvatarPicker(profileUser)
+
+    const daltonismEl = document.getElementById("daltonismType")
+    if (daltonismEl) daltonismEl.textContent = visionType
+
+    const xpValueEl = document.getElementById("xpValue")
+    const xpTotalEl = document.getElementById("xpTotal")
+    const xpProgressEl = document.getElementById("xpProgress")
+    const xp = Number(profileUser?.xp || 0)
+    const level = Number(profileUser?.level || 1)
+    const base = Math.max(0, (level - 1) * 100)
+    const next = Math.max(100, level * 100)
+    const progress = next > base ? Math.round(((xp - base) / (next - base)) * 100) : 0
+
+    if (xpValueEl) xpValueEl.textContent = String(xp)
+    if (xpTotalEl) xpTotalEl.textContent = `/ ${next} XP`
+    if (xpProgressEl) xpProgressEl.style.width = `${Math.max(0, Math.min(100, progress))}%`
   }
 
   renderUserInfo(user)
@@ -133,19 +153,28 @@ export async function initProfile() {
 
   if (goCamera) {
     goCamera.addEventListener("click", () => {
-      window.location.href = "./camera.html"
+      window.location.href = "/src/views/camera.html"
     })
   }
 
   if (goQuiz) {
     goQuiz.addEventListener("click", () => {
-      window.location.href = "./quiz.html"
+      window.location.href = "/src/views/quiz.html"
+    })
+  }
+
+  if (goChat) {
+    goChat.addEventListener("click", () => {
+      const chatOverlay = document.getElementById("chatOverlay")
+      if (chatOverlay) {
+        chatOverlay.classList.toggle("hidden")
+      }
     })
   }
 
   if (goAchievements) {
     goAchievements.addEventListener("click", () => {
-      window.location.href = "./achievements.html"
+      window.location.href = "/src/views/achievements.html"
     })
   }
 

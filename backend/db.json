@@ -75,15 +75,15 @@
       "username": "afalc",
       "password": "1234",
       "role": "user",
-      "xp": 90,
-      "level": 1,
-      "daltonismType": "tritanopia",
+      "xp": 360,
+      "level": 4,
+      "daltonismType": "normal",
       "colorScheme": "auto",
       "displayMode": "light",
       "profileImage": "",
-      "quizzesCompleted": 1,
-      "perfectQuizzes": 0,
-      "highScore": 9,
+      "quizzesCompleted": 4,
+      "perfectQuizzes": 1,
+      "highScore": 10,
       "id": "HyiZRw8"
     },
     {
@@ -515,6 +515,22 @@
       "description": "Completed your first quiz",
       "unlockedAt": 1781380708783,
       "id": "Qaj0_eD"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "apprentice",
+      "title": "Color Apprentice",
+      "description": "Scored at least 5 points",
+      "unlockedAt": 1781652734119,
+      "id": "byuggf_"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "sharp_eye",
+      "title": "Sharp Eye",
+      "description": "Scored at least 7 points in a quiz",
+      "unlockedAt": 1781652749406,
+      "id": "5_EL2Px"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

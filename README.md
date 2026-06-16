@@ -91,3 +91,5 @@ json-server --watch backend/db.json --port 3000
 - Add more advanced accessibility guidance and educational content
 - Improve the camera and color-detection accuracy
 - Add more onboarding explanations and result details for the daltonism test
+- Add a page with informations about daltonism, such as daltonism 
+type, what is daltonism and other curiosities
