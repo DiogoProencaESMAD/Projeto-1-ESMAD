@@ -27,13 +27,13 @@ export function initChatOverlay() {
             <input
                 type="text"
                 id="chatInput"
-                placeholder="Escreve uma mensagem..."
+                placeholder="Write a message..."
                 class="theme-chat-input w-full h-12 px-4 text-base font-medium outline-none border rounded-lg"
             >
             <button
                 id="sendChat"
                 type="button"
-                aria-label="Enviar mensagem"
+                aria-label="Send message"
                 class="theme-chat-send absolute right-3 top-1/2 -translate-y-1/2 transition"
             >
                 <i data-lucide="send" class="w-5 h-5"></i>
@@ -81,7 +81,7 @@ export function initChatOverlay() {
       if (!container) return
 
       if (messages.length === 0) {
-        container.innerHTML = `<div class="theme-muted-text text-sm">Sem mensagens ainda.</div>`
+        container.innerHTML = `<div class="theme-muted-text text-sm">No messages yet.</div>`
       } else {
         container.innerHTML = messages
           .map(

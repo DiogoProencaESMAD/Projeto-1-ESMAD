@@ -103,37 +103,49 @@ export const achievementModel = {
   async getAll(userId) {
     if (!userId) return []
 
-    const res = await fetch(
-      `${API_BASE}/achievements?userId=${encodeURIComponent(userId)}`
-    )
-    if (!res.ok) return []
+    try {
+      const res = await fetch(
+        `${API_BASE}/achievements?userId=${encodeURIComponent(userId)}`
+      )
+      if (!res.ok) return []
 
-    return res.json()
+      return res.json()
+    } catch {
+      return []
+    }
   },
 
   async unlock(userId, achievementId, title, description) {
-    if (!userId) return
+    if (!userId) return false
 
-    const existsRes = await fetch(
-      `${API_BASE}/achievements?userId=${encodeURIComponent(
-        userId
-      )}&achievementId=${encodeURIComponent(achievementId)}`
-    )
-    const existing = await existsRes.json()
-    if (existing.length) return
+    try {
+      const existsRes = await fetch(
+        `${API_BASE}/achievements?userId=${encodeURIComponent(
+          userId
+        )}&achievementId=${encodeURIComponent(achievementId)}`
+      )
+      if (!existsRes.ok) return false
 
-    await fetch(`${API_BASE}/achievements`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        userId,
-        achievementId,
-        title,
-        description,
-        unlockedAt: Date.now()
+      const existing = await existsRes.json()
+      if (existing.length) return true
+
+      const createRes = await fetch(`${API_BASE}/achievements`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          userId,
+          achievementId,
+          title,
+          description,
+          unlockedAt: Date.now()
+        })
       })
-    })
+
+      return createRes.ok
+    } catch {
+      return false
+    }
   }
 }

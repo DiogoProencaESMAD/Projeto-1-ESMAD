@@ -34,10 +34,14 @@ export async function getCurrentUser() {
   const userId = parseAuthToken(token)
   if (!userId) return null
 
-  const res = await fetch(`${API_BASE}/users/${userId}`)
-  if (!res.ok) return null
+  try {
+    const res = await fetch(`${API_BASE}/users/${userId}`)
+    if (!res.ok) return null
 
-  return res.json()
+    return res.json()
+  } catch {
+    return null
+  }
 }
 
 export async function getUser() {
@@ -47,31 +51,39 @@ export async function getUser() {
 export async function updateUser(user) {
   if (!user || !user.id) return null
 
-  const res = await fetch(`${API_BASE}/users/${user.id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(user)
-  })
+  try {
+    const res = await fetch(`${API_BASE}/users/${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    })
 
-  if (!res.ok) return null
-  return res.json()
+    if (!res.ok) return null
+    return res.json()
+  } catch {
+    return null
+  }
 }
 
 async function patchUser(userId, fields) {
   if (!userId || !fields) return null
 
-  const res = await fetch(`${API_BASE}/users/${userId}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(fields)
-  })
+  try {
+    const res = await fetch(`${API_BASE}/users/${userId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(fields)
+    })
 
-  if (!res.ok) return null
-  return res.json()
+    if (!res.ok) return null
+    return res.json()
+  } catch {
+    return null
+  }
 }
 
 export async function addXP(amount) {
@@ -130,15 +142,21 @@ export async function setUsername(username) {
     return { success: true, user }
   }
 
-  const existingRes = await fetch(
-    `${API_BASE}/users?username=${encodeURIComponent(trimmedUsername)}`
-  )
+  let existingUsers = []
+  try {
+    const existingRes = await fetch(
+      `${API_BASE}/users?username=${encodeURIComponent(trimmedUsername)}`
+    )
 
-  if (!existingRes.ok) {
+    if (!existingRes.ok) {
+      return { success: false, message: "Unable to validate username" }
+    }
+
+    existingUsers = await existingRes.json()
+  } catch {
     return { success: false, message: "Unable to validate username" }
   }
 
-  const existingUsers = await existingRes.json()
   const alreadyTaken = existingUsers.some((existingUser) => existingUser.id !== user.id)
   if (alreadyTaken) {
     return { success: false, message: "Username already exists" }

@@ -18,15 +18,15 @@
       "username": "Diogo",
       "password": "1234",
       "role": "user",
-      "xp": 610,
-      "level": 7,
+      "xp": 780,
+      "level": 8,
       "id": "Nq3iC9VV5vU",
       "daltonismType": "normal",
-      "quizzesCompleted": 5,
-      "perfectQuizzes": 2,
+      "quizzesCompleted": 7,
+      "perfectQuizzes": 3,
       "highScore": 10,
       "colorScheme": "deuteranopia",
-      "profileImage": "/public/avatars/avatar-coral.svg",
+      "profileImage": "/public/avatars/avatar-lilac.svg",
       "displayMode": "dark"
     },
     {
@@ -665,6 +665,14 @@
       "description": "Completed 5 quizzes",
       "unlockedAt": 1781718567612,
       "id": "KR2M_KywHak"
+    },
+    {
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "perfect_three",
+      "title": "Perfect Three",
+      "description": "Got 3 perfect quiz scores",
+      "unlockedAt": 1781721335770,
+      "id": "edObvLGZGmU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

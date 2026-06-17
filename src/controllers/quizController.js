@@ -21,9 +21,7 @@ export async function initQuiz() {
 
   // Bottom navigation buttons
   const goProfile = document.getElementById("goProfile")
-  const goQuiz = document.getElementById("goQuiz")
   const goCamera = document.getElementById("goCamera")
-  const goChat = document.getElementById("goChat")
   const goAchievements = document.getElementById("goAchievements")
 
   if (goProfile) {
@@ -99,7 +97,7 @@ export async function initQuiz() {
 
     const currentQuestionNum = quizModel.currentIndex + 1
     const totalQuestions = quizModel.questions.length
-    questionNumberEl.textContent = `Pergunta ${currentQuestionNum} de ${totalQuestions}`
+    questionNumberEl.textContent = `Question ${currentQuestionNum} of ${totalQuestions}`
 
     questionEl.textContent = q.question
     answersEl.innerHTML = ""
@@ -130,6 +128,83 @@ export async function initQuiz() {
     })
   }
 
+  async function saveAchievements(userId, finalUser, score, total) {
+    if (!userId) return
+
+    const unlock = (achievementId, title, description) =>
+      achievementModel.unlock(userId, achievementId, title, description)
+
+    try {
+      await unlock("first_quiz", "First Steps", "Completed your first quiz")
+
+      if (score >= 5) {
+        await unlock("apprentice", "Color Apprentice", "Scored at least 5 points")
+      }
+
+      if (score >= 7) {
+        await unlock("sharp_eye", "Sharp Eye", "Scored at least 7 points in a quiz")
+      }
+
+      if (score >= 9) {
+        await unlock(
+          "almost_perfect",
+          "Almost Perfect",
+          "Scored at least 9 points in a quiz"
+        )
+      }
+
+      if (score === total) {
+        await unlock("master", "Color Master", "Perfect quiz score")
+      }
+
+      if ((finalUser.quizzesCompleted || 0) >= 3) {
+        await unlock("quiz_trio", "Quiz Trio", "Completed 3 quizzes")
+      }
+
+      if ((finalUser.quizzesCompleted || 0) >= 5) {
+        await unlock("quiz_regular", "Quiz Regular", "Completed 5 quizzes")
+      }
+
+      if ((finalUser.quizzesCompleted || 0) >= 10) {
+        await unlock("quiz_veteran", "Quiz Veteran", "Completed 10 quizzes")
+      }
+
+      if ((finalUser.perfectQuizzes || 0) >= 3) {
+        await unlock("perfect_three", "Perfect Three", "Got 3 perfect quiz scores")
+      }
+
+      if ((finalUser.perfectQuizzes || 0) >= 5) {
+        await unlock("perfect_five", "Perfect Five", "Got 5 perfect quiz scores")
+      }
+
+      if ((finalUser.xp || 0) >= 50) {
+        await unlock("xp_50", "Getting Started", "Reached 50 XP")
+      }
+
+      if ((finalUser.xp || 0) >= 100) {
+        await unlock("xp_100", "Hundred Club", "Reached 100 XP")
+      }
+
+      if ((finalUser.xp || 0) >= 250) {
+        await unlock("xp_250", "XP Collector", "Reached 250 XP")
+      }
+
+      if ((finalUser.xp || 0) >= 500) {
+        await unlock("xp_500", "XP Machine", "Reached 500 XP")
+      }
+
+      if ((finalUser.level || 1) >= 2) {
+        await unlock("level_2", "Level Up", "Reached level 2")
+      }
+
+      if ((finalUser.level || 1) >= 5) {
+        await unlock("level_5", "Rising Star", "Reached level 5")
+      }
+    } catch (err) {
+      console.error("Failed to save achievements:", err)
+    }
+  }
+
   async function showResults() {
     if (resultsShown) return
     resultsShown = true
@@ -143,75 +218,6 @@ export async function initQuiz() {
       ...currentUser,
       ...statsUser,
       ...updatedUser
-    }
-
-    const unlock = (achievementId, title, description) =>
-      achievementModel.unlock(currentUser.id, achievementId, title, description)
-
-    await unlock("first_quiz", "First Steps", "Completed your first quiz")
-
-    if (score >= 5) {
-      await unlock("apprentice", "Color Apprentice", "Scored at least 5 points")
-    }
-
-    if (score >= 7) {
-      await unlock("sharp_eye", "Sharp Eye", "Scored at least 7 points in a quiz")
-    }
-
-    if (score >= 9) {
-      await unlock(
-        "almost_perfect",
-        "Almost Perfect",
-        "Scored at least 9 points in a quiz"
-      )
-    }
-
-    if (score === total) {
-      await unlock("master", "Color Master", "Perfect quiz score")
-    }
-
-    if ((finalUser.quizzesCompleted || 0) >= 3) {
-      await unlock("quiz_trio", "Quiz Trio", "Completed 3 quizzes")
-    }
-
-    if ((finalUser.quizzesCompleted || 0) >= 5) {
-      await unlock("quiz_regular", "Quiz Regular", "Completed 5 quizzes")
-    }
-
-    if ((finalUser.quizzesCompleted || 0) >= 10) {
-      await unlock("quiz_veteran", "Quiz Veteran", "Completed 10 quizzes")
-    }
-
-    if ((finalUser.perfectQuizzes || 0) >= 3) {
-      await unlock("perfect_three", "Perfect Three", "Got 3 perfect quiz scores")
-    }
-
-    if ((finalUser.perfectQuizzes || 0) >= 5) {
-      await unlock("perfect_five", "Perfect Five", "Got 5 perfect quiz scores")
-    }
-
-    if ((finalUser.xp || 0) >= 50) {
-      await unlock("xp_50", "Getting Started", "Reached 50 XP")
-    }
-
-    if ((finalUser.xp || 0) >= 100) {
-      await unlock("xp_100", "Hundred Club", "Reached 100 XP")
-    }
-
-    if ((finalUser.xp || 0) >= 250) {
-      await unlock("xp_250", "XP Collector", "Reached 250 XP")
-    }
-
-    if ((finalUser.xp || 0) >= 500) {
-      await unlock("xp_500", "XP Machine", "Reached 500 XP")
-    }
-
-    if ((finalUser.level || 1) >= 2) {
-      await unlock("level_2", "Level Up", "Reached level 2")
-    }
-
-    if ((finalUser.level || 1) >= 5) {
-      await unlock("level_5", "Rising Star", "Reached level 5")
     }
 
     questionEl.textContent = "Quiz finished"
@@ -229,6 +235,8 @@ export async function initQuiz() {
       e.preventDefault()
       window.location.href = "./profile.html?refresh=true"
     }
+
+    void saveAchievements(currentUser.id, finalUser, score, total)
   }
 
   render()

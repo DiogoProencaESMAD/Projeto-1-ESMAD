@@ -4,8 +4,6 @@ import { escapeHtml } from "../shared/utils/dom.js"
 import {
   COLOR_SCHEME_OPTIONS,
   DISPLAY_MODE_OPTIONS,
-  formatColorScheme,
-  formatDisplayMode,
   formatDaltonismType
 } from "../shared/constants/daltonism.js"
 import { PRESET_PROFILE_AVATARS } from "../shared/constants/profileAvatars.js"
@@ -23,7 +21,6 @@ export async function initProfile() {
   const container = document.getElementById("userInfo")
   const goCamera = document.getElementById("goCamera")
   const goQuiz = document.getElementById("goQuiz")
-  const goChat = document.getElementById("goChat")
   const goAchievements = document.getElementById("goAchievements")
   const logoutBtn = document.getElementById("logoutBtn")
   const settingsBtn = document.getElementById("settingsBtn")
@@ -80,8 +77,6 @@ export async function initProfile() {
 
   function renderUserInfo(profileUser) {
     const visionType = formatDaltonismType(profileUser?.daltonismType)
-    const colorSchemeLabel = formatColorScheme(profileUser?.colorScheme || "auto")
-    const displayModeLabel = formatDisplayMode(profileUser?.displayMode || "light")
     const normalizedProfileImage = normalizeAvatarPath(profileUser?.profileImage)
     const avatarContent = normalizedProfileImage
       ? `<img src="${normalizedProfileImage}" alt="Profile picture" class="w-full h-full object-cover">`
@@ -97,7 +92,7 @@ export async function initProfile() {
             ${escapeHtml(profileUser.username || "Guest")}
             </h2>
             <p class="theme-muted-text text-xl font-medium">
-              Nivel: ${escapeHtml(profileUser.level || 1)}
+              Level: ${escapeHtml(profileUser.level || 1)}
             </p>
         </div>
       </div>
