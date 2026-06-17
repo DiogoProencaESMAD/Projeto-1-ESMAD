@@ -109,7 +109,7 @@ export async function initQuiz() {
       const btn = document.createElement("button")
       btn.type = "button"
       btn.textContent = answerText
-      btn.className = "w-full py-3 bg-sky-500 hover:bg-sky-600 active:scale-95 transition rounded-lg text-white text-lg font-medium"
+      btn.className = "theme-primary-bg theme-primary-hover w-full py-3 active:scale-95 transition rounded-lg text-lg font-medium"
 
       btn.onclick = () => {
         if (answering) return

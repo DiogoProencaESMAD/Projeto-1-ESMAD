@@ -16,10 +16,10 @@
 
 </head>
 
-<body class="bg-gray-100 min-h-screen overflow-hidden">
+<body class="theme-page-bg min-h-screen overflow-x-hidden">
   
   <!-- HEADER -->
-    <header class="bg-sky-500 shadow-sm">
+    <header class="theme-primary-bg shadow-sm">
         <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
@@ -29,7 +29,7 @@
                 id="settingsBtn"
                 type="button"
                 aria-label="Settings"
-                class="p-2 rounded-lg hover:bg-sky-400 transition"
+                class="p-2 rounded-lg theme-primary-hover transition"
             >
                 <i data-lucide="settings" class="w-6 h-6 text-white"></i>
             </button>
@@ -43,47 +43,47 @@
         <div id="userInfo" class="flex items-center gap-4"></div>
 
         <!-- DALTONISM CARD -->
-        <section class="bg-sky-100 rounded-3xl p-6 shadow-sm">
+        <section class="theme-surface-alt rounded-3xl p-6 shadow-sm">
             <div class="flex justify-between items-start">
                 <div>
                     <div class="flex items-center gap-2 mb-3">
                         <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                             <i data-lucide="eye" class="w-4 h-4 text-sky-500"></i>
                         </div>
-                        <span class="text-sky-500 text-sm font-semibold">
+                        <span class="theme-accent-text text-sm font-semibold">
                             Your vision type
                         </span>
                     </div>
-                    <div id="daltonismType" class="text-2xl font-bold text-sky-500 mb-4" aria-live="polite"></div>
+                    <div id="daltonismType" class="theme-accent-text text-2xl font-bold mb-4" aria-live="polite"></div>
                 </div>
-                <div class="w-12 h-12 bg-green-100 border-2 border-sky-300 rounded-xl flex items-center justify-center">
-                    <i data-lucide="eye" class="w-6 h-6 text-green-600"></i>
+                <div class="theme-primary-soft-bg theme-border w-12 h-12 border-2 rounded-xl flex items-center justify-center">
+                    <i data-lucide="eye" class="theme-accent-text w-6 h-6"></i>
                 </div>
             </div>
         </section>
 
         <!-- XP CARD -->
-        <section class="bg-sky-100 rounded-3xl p-5 shadow-sm">
+        <section class="theme-surface-alt rounded-3xl p-5 shadow-sm">
             <div class="flex justify-between items-center mb-4">
                 <span class="uppercase text-sm font-semibold tracking-wide">
                     Experience
                 </span>
                 <span>
-                    <strong id="xpValue" class="text-sky-500">0</strong>
-                    <span id="xpTotal" class="text-sky-400">/ 100 XP</span>
+                    <strong id="xpValue" class="theme-accent-text">0</strong>
+                    <span id="xpTotal" class="theme-muted-text">/ 100 XP</span>
                 </span>
             </div>
-            <div class="h-3 bg-white rounded-full overflow-hidden mb-5">
-                <div id="xpProgress" class="h-full bg-sky-500 rounded-full" style="width:0%"></div>
+            <div class="theme-progress-track h-3 rounded-full overflow-hidden mb-5">
+                <div id="xpProgress" class="theme-progress-bar h-full rounded-full" style="width:0%"></div>
             </div>
             <div class="flex items-center justify-between">
-                <h3 class="uppercase text-sm font-medium tracking-wide text-sky-500">
+                <h3 class="theme-accent-text uppercase text-sm font-medium tracking-wide">
                     Achievements
                 </h3>
                 <button
                     id="goAchievements"
                     type="button"
-                    class="bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold px-6 py-3 rounded-lg transition"
+                    class="theme-primary-bg theme-primary-hover text-sm font-semibold px-6 py-3 rounded-lg transition"
                 >
                     VIEW ALL
                 </button>
@@ -94,7 +94,7 @@
   <div id="chatOverlay" class="hidden fixed bottom-24 left-0 right-0 max-w-md mx-auto z-40"></div>
 
   <!-- BOTTOM NAVIGATION -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-sky-500 border-t border-sky-400">
+    <nav class="theme-primary-bg theme-border fixed bottom-0 left-0 right-0 border-t">
         <div class="max-w-md mx-auto grid grid-cols-4 py-3">
             
             <!-- QUIZ BUTTON -->
@@ -127,8 +127,8 @@
                 type="button"
                 class="flex flex-col items-center gap-1 text-white"
             >
-                <div class="bg-sky-300 rounded-full p-2">
-                    <i data-lucide="user" class="text-white"></i>
+                <div class="theme-primary-soft-bg rounded-full p-2">
+                    <i data-lucide="user" class="theme-accent-text"></i>
                 </div>
                 <span class="text-xs font-bold text-white">
                     PROFILE
@@ -150,18 +150,18 @@
     </nav>
 
   <div id="settingsModal" class="fixed inset-0 z-50 hidden bg-black/40 p-4 flex items-center justify-center">
-    <div class="w-full max-w-md bg-white rounded-3xl shadow-xl overflow-hidden">
+    <div class="theme-surface w-full max-w-md max-h-[85vh] rounded-3xl shadow-xl overflow-y-auto">
         <!-- HEADER -->
-        <div class="border-b border-gray-100">
+        <div class="theme-border border-b">
             <div class="max-w-md mx-auto px-6 py-5 flex items-center justify-between">
-                <h1 class="text-xl font-semibold text-black">
+                <h1 class="theme-text text-xl font-semibold">
                     Settings
                 </h1>
                 <button
                     id="closeSettingsBtn"
                     type="button"
                     aria-label="Close settings"
-                    class="p-2 rounded-lg hover:bg-gray-100 transition"
+                    class="theme-text theme-surface-hover p-2 rounded-lg transition"
                 >
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
@@ -173,18 +173,18 @@
 
             <!-- COLOR SCHEME -->
             <section class="space-y-3">
-                <h2 class="text-gray-400 text-base font-medium">
+                <h2 class="theme-muted-text text-base font-medium">
                     Color Scheme
                 </h2>
                 <div class="flex flex-wrap gap-3 items-center">
                     <select
                         id="colorSchemeSelect"
-                        class="flex-1 min-w-[140px] h-12 px-4 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-sky-400"
+                        class="theme-surface flex-1 min-w-[140px] h-12 px-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-400"
                     ></select>
                     <button
                         id="saveColorSchemeBtn"
                         type="button"
-                        class="flex-1 min-w-[140px] h-12 px-6 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition"
+                        class="theme-primary-bg theme-primary-hover flex-1 min-w-[140px] h-12 px-6 font-semibold rounded-xl transition"
                     >
                         Change Scheme
                     </button>
@@ -193,18 +193,18 @@
 
             <!-- DISPLAY MODE -->
             <section class="space-y-3">
-                <h2 class="text-gray-400 text-base font-medium">
+                <h2 class="theme-muted-text text-base font-medium">
                     Display Mode
                 </h2>
                 <div class="flex flex-wrap gap-3 items-center">
                     <select
                         id="displayModeSelect"
-                        class="flex-1 min-w-[140px] h-12 px-4 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-sky-400"
+                        class="theme-surface flex-1 min-w-[140px] h-12 px-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-400"
                     ></select>
                     <button
                         id="saveDisplayModeBtn"
                         type="button"
-                        class="flex-1 min-w-[140px] h-12 px-6 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition"
+                        class="theme-primary-bg theme-primary-hover flex-1 min-w-[140px] h-12 px-6 font-semibold rounded-xl transition"
                     >
                         Change Mode
                     </button>
@@ -217,46 +217,53 @@
                     <button
                         id="changeUsernameBtn"
                         type="button"
-                        class="flex-1 min-w-[140px] py-3 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition"
+                        class="theme-primary-bg theme-primary-hover flex-1 min-w-[140px] py-3 font-semibold rounded-xl transition"
                     >
                         Change Username
                     </button>
                     <button
                         id="changePasswordBtn"
                         type="button"
-                        class="flex-1 min-w-[140px] py-3 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition"
+                        class="theme-primary-bg theme-primary-hover flex-1 min-w-[140px] py-3 font-semibold rounded-xl transition"
                     >
                         Change Password
+                    </button>
+                    <button
+                        id="logoutBtn"
+                        type="button"
+                        class="theme-primary-soft-bg theme-border flex-1 min-w-[140px] py-3 font-semibold rounded-xl border transition"
+                    >
+                        Logout
                     </button>
                 </div>
             </section>
 
             <!-- PROFILE PICTURE -->
             <section class="space-y-4">
-                <h2 class="text-gray-400 text-base font-medium">
+                <h2 class="theme-muted-text text-base font-medium">
                     Profile Picture
                 </h2>
                 <div class="flex flex-wrap gap-3 items-center">
                     <select
                         id="profileImageSelect"
-                        class="flex-1 min-w-[140px] h-12 px-4 rounded-xl border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-sky-400"
+                        class="theme-surface flex-1 min-w-[140px] h-12 px-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-400"
                     ></select>
                     <button
                         id="saveProfileImageBtn"
                         type="button"
-                        class="flex-1 min-w-[140px] h-12 px-6 bg-sky-500 text-white font-semibold rounded-xl hover:bg-sky-600 transition"
+                        class="theme-primary-bg theme-primary-hover flex-1 min-w-[140px] h-12 px-6 font-semibold rounded-xl transition"
                     >
                         Save Picture
                     </button>
                 </div>
                 <div class="flex flex-col items-center">
-                    <div id="profileImagePreview" class="w-24 h-24 rounded-3xl bg-slate-50 border border-gray-200 flex items-center justify-center text-2xl font-semibold text-slate-700">
+                    <div id="profileImagePreview" class="theme-surface w-24 h-24 rounded-3xl border flex items-center justify-center text-2xl font-semibold">
                         Preview
                     </div>
                 <button
                     id="changeVisionTypeBtn"
                     type="button"
-                    class="text-sky-500 font-semibold hover:text-sky-600 transition"
+                    class="theme-accent-text theme-accent-hover font-semibold transition"
                 >
                     Change Vision Type
                 </button>

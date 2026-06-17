@@ -17,10 +17,10 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
 </head>
-<body class="bg-gray-100 min-h-screen overflow-hidden">
+<body class="theme-page-bg min-h-screen overflow-hidden">
 
 <!-- HEADER -->
-    <header class="bg-sky-500 shadow-sm">
+    <header class="theme-primary-bg shadow-sm">
         <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
                 <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
@@ -47,7 +47,7 @@
 
             <!-- COLOR DETECTION -->
             <div
-                class="absolute top-4 left-4 right-4 bg-sky-500 backdrop-blur-sm rounded-lg px-4 py-3 flex flex-col gap-3"
+                class="theme-primary-bg absolute top-4 left-4 right-4 backdrop-blur-sm rounded-lg px-4 py-3 flex flex-col gap-3"
             >
                 <div class="flex items-start justify-between gap-4">
                     <div>
@@ -77,7 +77,7 @@
     </main>
 
 <!-- BOTTOM NAVIGATION -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-sky-500 border-t border-sky-400">
+    <nav class="theme-primary-bg theme-border fixed bottom-0 left-0 right-0 border-t">
         <div class="max-w-md mx-auto grid grid-cols-4 py-3">
             
             <!-- QUIZ BUTTON -->
@@ -98,8 +98,8 @@
                 type="button"
                 class="flex flex-col items-center gap-1 text-white"
             >
-                <div class="bg-sky-300 rounded-full p-2">
-                    <i data-lucide="camera" class="text-white"></i>
+                <div class="theme-primary-soft-bg rounded-full p-2">
+                    <i data-lucide="camera" class="theme-accent-text"></i>
                 </div>
                 <span class="text-xs font-bold">
                     CAMERA

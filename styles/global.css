@@ -13,6 +13,8 @@
   --secondary-bg: #f4f6f8;
   --chat-bg: #fafafa;
   --xp-color: #4caf50;
+  --button-text-on-soft: #111111;
+  --header-text: #ffffff;
 }
 
 * {
@@ -43,6 +45,8 @@ body.theme-normal {
   --secondary-bg: #f4f6f8;
   --chat-bg: #fafafa;
   --xp-color: #4caf50;
+  --button-text-on-soft: #111111;
+  --header-text: #ffffff;
 }
 
 body.theme-protanopia {
@@ -57,6 +61,8 @@ body.theme-protanopia {
   --secondary-bg: #eef2fb;
   --chat-bg: #f7f9fe;
   --xp-color: #4472c4;
+  --button-text-on-soft: #182033;
+  --header-text: #ffffff;
 }
 
 body.theme-deuteranopia {
@@ -71,6 +77,8 @@ body.theme-deuteranopia {
   --secondary-bg: #f2ede2;
   --chat-bg: #fbf8f2;
   --xp-color: #b88a2a;
+  --button-text-on-soft: #2d2418;
+  --header-text: #ffffff;
 }
 
 body.theme-tritanopia {
@@ -85,6 +93,8 @@ body.theme-tritanopia {
   --secondary-bg: #eaf4f4;
   --chat-bg: #f6fbfb;
   --xp-color: #2f9d8f;
+  --button-text-on-soft: #163239;
+  --header-text: #ffffff;
 }
 
 body.theme-monochromacy {
@@ -99,6 +109,8 @@ body.theme-monochromacy {
   --secondary-bg: #e9e9e9;
   --chat-bg: #f8f8f8;
   --xp-color: #777777;
+  --button-text-on-soft: #1f1f1f;
+  --header-text: #ffffff;
 }
 
 body.mode-light {
@@ -114,6 +126,8 @@ body.mode-dark {
   --border-color: #3a4657;
   --secondary-bg: #222a36;
   --chat-bg: #161c25;
+  --button-text-on-soft: #f3f5f8;
+  --header-text: #ffffff;
 }
 
 
@@ -164,6 +178,123 @@ select
 
 .hidden {
   display: none !important;
+}
+
+.theme-primary-bg {
+  background: var(--primary-color) !important;
+  color: var(--header-text) !important;
+}
+
+.theme-primary-hover:hover {
+  background: var(--primary-hover) !important;
+}
+
+.theme-surface-hover:hover {
+  background: var(--secondary-bg) !important;
+}
+
+.theme-primary-soft-bg {
+  background: var(--secondary-bg) !important;
+  color: var(--button-text-on-soft) !important;
+}
+
+.theme-surface {
+  background: var(--surface-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-surface-alt {
+  background: var(--secondary-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-page-bg {
+  background: var(--app-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.theme-text {
+  color: var(--text-color) !important;
+}
+
+.theme-muted-text {
+  color: var(--muted-text) !important;
+}
+
+.theme-accent-text {
+  color: var(--primary-color) !important;
+}
+
+.theme-accent-hover:hover {
+  color: var(--primary-hover) !important;
+}
+
+.theme-border {
+  border-color: var(--border-color) !important;
+}
+
+.theme-progress-track {
+  background: color-mix(in srgb, var(--border-color) 65%, transparent) !important;
+}
+
+.theme-progress-bar {
+  background: var(--primary-color) !important;
+}
+
+.theme-progress-track-on-primary {
+  background: color-mix(in srgb, var(--header-text) 20%, transparent) !important;
+}
+
+.theme-progress-bar-on-primary {
+  background: var(--header-text) !important;
+}
+
+.theme-chat-panel {
+  background: var(--primary-color) !important;
+  color: var(--header-text) !important;
+}
+
+.theme-chat-surface {
+  background: var(--surface-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.theme-chat-message {
+  color: var(--text-color) !important;
+}
+
+.theme-chat-user {
+  color: var(--primary-color) !important;
+}
+
+.theme-chat-input {
+  background: var(--surface-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-chat-send {
+  color: var(--primary-color) !important;
+}
+
+.theme-chat-status {
+  color: var(--header-text) !important;
+  opacity: 0.92;
+}
+
+.theme-achievement-card {
+  background: var(--surface-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.theme-achievement-card-muted {
+  background: var(--secondary-bg) !important;
+  color: var(--muted-text) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 .page-title {

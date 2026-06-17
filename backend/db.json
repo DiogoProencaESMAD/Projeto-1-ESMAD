@@ -18,16 +18,16 @@
       "username": "Diogo",
       "password": "1234",
       "role": "user",
-      "xp": 510,
-      "level": 6,
+      "xp": 610,
+      "level": 7,
       "id": "Nq3iC9VV5vU",
       "daltonismType": "normal",
-      "quizzesCompleted": 4,
-      "perfectQuizzes": 1,
+      "quizzesCompleted": 5,
+      "perfectQuizzes": 2,
       "highScore": 10,
-      "colorScheme": "auto",
+      "colorScheme": "deuteranopia",
       "profileImage": "/public/avatars/avatar-coral.svg",
-      "displayMode": "light"
+      "displayMode": "dark"
     },
     {
       "username": "Maria",
@@ -217,6 +217,12 @@
       "text": "yo-yo",
       "timestamp": "2026-06-17T17:19:58.797Z",
       "id": "D0tU17qxYJA"
+    },
+    {
+      "user": "Diogo",
+      "text": "ggggggg",
+      "timestamp": "2026-06-17T18:09:55.896Z",
+      "id": "tAxjkA7kZto"
     }
   ],
   "achievements": [
@@ -651,6 +657,14 @@
       "description": "Reached 500 XP",
       "unlockedAt": 1781716825320,
       "id": "8HiXz-q0VCY"
+    },
+    {
+      "userId": "Nq3iC9VV5vU",
+      "achievementId": "quiz_regular",
+      "title": "Quiz Regular",
+      "description": "Completed 5 quizzes",
+      "unlockedAt": 1781718567612,
+      "id": "KR2M_KywHak"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

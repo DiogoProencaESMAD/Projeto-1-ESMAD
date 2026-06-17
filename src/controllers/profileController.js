@@ -89,14 +89,14 @@ export async function initProfile() {
 
     container.innerHTML = `
       <div class="flex items-center gap-4">
-        <div class="w-24 h-24 rounded-full border-2 border-gray-700 overflow-hidden flex items-center justify-center bg-gray-200">
+        <div class="theme-surface w-24 h-24 rounded-full border-2 overflow-hidden flex items-center justify-center">
           ${avatarContent}
         </div>
         <div>
-          <h2 class="text-3xl font-bold">
+          <h2 class="theme-text text-3xl font-bold">
             ${escapeHtml(profileUser.username || "Guest")}
             </h2>
-            <p class="text-xl text-gray-600 font-medium">
+            <p class="theme-muted-text text-xl font-medium">
               Nivel: ${escapeHtml(profileUser.level || 1)}
             </p>
         </div>

@@ -14,10 +14,10 @@
     <!-- LUCIDE -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body class="overflow-hidden bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+<body class="theme-page-bg overflow-hidden">
 
   <!-- HEADER -->
-    <header class="bg-sky-500 shadow-sm">
+    <header class="theme-primary-bg shadow-sm">
         <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
               <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
@@ -31,17 +31,17 @@
 
         <!-- QUIZ FORM -->
         <div
-            class="bg-sky-200 rounded-3xl p-6 md:p-8 flex flex-col items-center gap-10"
+            class="theme-surface-alt rounded-3xl p-6 md:p-8 flex flex-col items-center gap-10"
         >
             <!-- QUESTION NUMBER -->
-            <p id="questionNumber" class="text-sky-700 text-lg font-bold dark:text-sky-300">
+            <p id="questionNumber" class="theme-accent-text text-lg font-bold">
                 Question 1 of 10
             </p>
 
             <!-- QUESTION -->
             <h2
                 id="question"
-                class="text-center text-2xl font-medium text-black dark:t0"
+                class="theme-text text-center text-2xl font-medium"
             >
                 Loading...
             </h2>
@@ -53,12 +53,12 @@
             <div id="result" class="w-full text-center space-y-2"></div>
 
             <!-- NEXT BUTTON -->
-            <button id="nextBtn" type="button" class="mt-4 px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-lg text-white font-medium">Next</button>
+            <button id="nextBtn" type="button" class="theme-primary-bg theme-primary-hover mt-4 px-6 py-3 rounded-lg font-medium">Next</button>
         </div>
     </main>
 
 <!-- BOTTOM NAVIGATION -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-sky-500 border-t border-sky-400">
+    <nav class="theme-primary-bg theme-border fixed bottom-0 left-0 right-0 border-t">
         <div class="max-w-md mx-auto grid grid-cols-4 py-3">
             
             <!-- QUIZ BUTTON -->
@@ -66,8 +66,8 @@
                 type="button"
                 class="flex flex-col items-center gap-1 text-white"
             >
-                <div class="bg-sky-300 rounded-full p-2">
-                    <i data-lucide="clipboard-list" class="text-white"></i>
+                <div class="theme-primary-soft-bg rounded-full p-2">
+                    <i data-lucide="clipboard-list" class="theme-accent-text"></i>
                 </div>                
                 <span class="text-xs font-bold">
                     QUIZZ

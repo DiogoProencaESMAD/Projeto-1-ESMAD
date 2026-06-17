@@ -226,7 +226,7 @@ export async function initDaltonism() {
       const button = document.createElement("button")
       button.type = "button"
       button.className =
-        "h-12 bg-sky-500 text-white rounded-xl font-medium transition active:scale-95"
+        "theme-primary-bg h-12 rounded-xl font-medium transition active:scale-95"
       button.textContent = answerLabel
       button.addEventListener("click", () => {
         answerQuestion(answerLabel)
@@ -241,7 +241,7 @@ export async function initDaltonism() {
       const button = document.createElement("button")
       button.type = "button"
       button.className =
-        "h-12 bg-sky-100 text-sky-900 rounded-xl font-medium transition active:scale-95"
+        "theme-primary-soft-bg h-12 rounded-xl font-medium transition active:scale-95"
       button.textContent = answerLabel
       button.addEventListener("click", () => {
         if (answerLabel === "I don't see a number") {

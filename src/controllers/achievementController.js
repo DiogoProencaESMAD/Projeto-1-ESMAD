@@ -80,10 +80,10 @@ export async function initAchievements() {
     .map((a) => {
       const unlocked = unlockedIds.has(a.achievementId)
       const cardClasses = unlocked
-        ? "bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4"
-        : "bg-slate-100/80 rounded-2xl p-4 shadow-sm border border-slate-200 flex items-center gap-4 opacity-80"
-      const titleClasses = unlocked ? "font-bold text-lg text-slate-900" : "font-bold text-lg text-slate-500"
-      const descriptionClasses = unlocked ? "text-sm text-gray-500" : "text-sm text-slate-500"
+        ? "theme-achievement-card rounded-2xl p-4 shadow-sm flex items-center gap-4"
+        : "theme-achievement-card-muted rounded-2xl p-4 shadow-sm flex items-center gap-4 opacity-80"
+      const titleClasses = unlocked ? "theme-text font-bold text-lg" : "theme-muted-text font-bold text-lg"
+      const descriptionClasses = unlocked ? "theme-muted-text text-sm" : "theme-muted-text text-sm"
 
       return `
     <div class="${cardClasses}">
@@ -95,7 +95,7 @@ export async function initAchievements() {
           ${escapeHtml(a.description)}
         </p>
       </div>
-      ${unlocked ? "" : "<span class='text-xs font-semibold uppercase tracking-[0.15em] text-slate-500'>Locked</span>"}
+      ${unlocked ? "" : "<span class='theme-muted-text text-xs font-semibold uppercase tracking-[0.15em]'>Locked</span>"}
     </div>
   `
     })
