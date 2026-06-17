@@ -1,29 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz</title>
-  <link rel="stylesheet" href="/styles/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
 
-  <div class="quiz-box">
-    <div class="app-brand logo-only">
-      <img class="brand-logo small" src="/public/logo-huebly.svg" alt="Huebly logo">
-    </div>
-    <a class="back-link" href="./profile.html">← Back to Profile</a>
+  <!-- HEADER -->
+    <header class="bg-sky-500 shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+              <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
+              <h1 class="sr-only">Huebly</h1>
+            </div>
+        </div>
+    </header>
 
-    <div id="question" class="question">Loading...</div>
-    <div id="answers" class="answers"></div>
-    <div id="result"></div>
-    <button id="nextBtn" type="button">Next</button>
-  </div>
+  <!-- MAIN -->
+    <main class="flex-1 max-w-md mx-auto w-full p-4 pb-32">
 
-  <div id="chatOverlay" class="hidden"></div>
-  <button id="goChat" type="button" class="chat-toggle">Chat</button>
+        <!-- QUIZ FORM -->
+        <div
+            class="bg-sky-100 rounded-3xl p-6 md:p-8 flex flex-col items-center gap-10"
+        >
+            <!-- QUESTION NUMBER -->
+            <p id="questionNumber" class="text-sky-400 text-lg font-bold">
+                Pergunta 1 de 10
+            </p>
+
+            <!-- QUESTION -->
+            <h2
+                id="question"
+                class="text-center text-2xl font-medium text-black"
+            >
+                Loading...
+            </h2>
+
+            <!-- ANSWERS -->
+            <div id="answers" class="w-full flex flex-col gap-4"></div>
+
+            <!-- RESULT -->
+            <div id="result" class="w-full text-center space-y-2"></div>
+
+            <!-- NEXT BUTTON -->
+            <button id="nextBtn" type="button" class="mt-4 px-6 py-3 bg-sky-500 hover:bg-sky-600 rounded-lg text-white font-medium">Next</button>
+        </div>
+    </main>
+
+<!-- BOTTOM NAVIGATION -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-sky-500 border-t border-sky-400">
+        <div class="max-w-md mx-auto grid grid-cols-4 py-3">
+            
+            <!-- QUIZ BUTTON -->
+            <button
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <div class="bg-sky-300 rounded-full p-2">
+                    <i data-lucide="clipboard-list" class="text-white"></i>
+                </div>                
+                <span class="text-xs font-bold">
+                    QUIZZ
+                </span>
+            </button>
+            
+            <!-- CAMERA BUTTON -->
+            <button
+                id="goCamera"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="camera"></i>
+                <span class="text-xs font-bold">
+                    CAMERA
+                </span>
+            </button>
+
+            <!-- PROFILE BUTTON -->
+            <button
+                id="goProfile"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="user" class="text-white"></i>
+                <span class="text-xs font-bold text-white">
+                    PROFILE
+                </span>
+            </button>
+
+            <!-- CHAT BUTTON -->
+            <button
+                id="goChat"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="message-square"></i>
+                <span class="text-xs font-bold">
+                    FORUM
+                </span>
+            </button>
+        </div>
+    </nav>
 
   <script type="module">
     import { initQuiz } from "../controllers/quizController.js"
+    lucide.createIcons();
     initQuiz()
   </script>
 </body>

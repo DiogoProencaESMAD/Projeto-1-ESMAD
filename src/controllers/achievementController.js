@@ -16,6 +16,32 @@ export async function initAchievements() {
 
   if (!listEl) return
 
+  // Bottom navigation buttons
+  const goProfile = document.getElementById("goProfile")
+  const goQuiz = document.getElementById("goQuiz")
+  const goCamera = document.getElementById("goCamera")
+  const goChat = document.getElementById("goChat")
+
+  if (goProfile) {
+    goProfile.addEventListener("click", () => {
+      window.location.href = "/src/views/profile.html"
+    })
+  }
+
+  if (goQuiz) {
+    goQuiz.addEventListener("click", () => {
+      window.location.href = "/src/views/quiz.html"
+    })
+  }
+
+  if (goCamera) {
+    goCamera.addEventListener("click", () => {
+      window.location.href = "/src/views/camera.html"
+    })
+  }
+
+  // `initChatOverlay()` attaches the click handler for `goChat`.
+
   const user = await getUser()
 
   if (!user) {

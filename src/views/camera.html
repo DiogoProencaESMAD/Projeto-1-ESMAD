@@ -25,14 +25,6 @@
     <header class="bg-sky-500 shadow-sm">
         <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <button
-                type="button"
-                aria-label="Perfil"
-                class="p-2 rounded-lg hover:bg-sky-400 transition"
-                onclick="window.location.href='./profile.html'"
-            >
-                <i data-lucide="arrow-left" class="text-white w-6 h-6"></i>
-            </button>
                 <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
                 <h1 class="sr-only">Huebly</h1>
             </div>
@@ -108,7 +100,9 @@
                 type="button"
                 class="flex flex-col items-center gap-1 text-white"
             >
-                <i data-lucide="camera"></i>
+                <div class="bg-sky-300 rounded-full p-2">
+                    <i data-lucide="camera" class="text-white"></i>
+                </div>
                 <span class="text-xs font-bold">
                     CAMERA
                 </span>
@@ -120,9 +114,7 @@
                 type="button"
                 class="flex flex-col items-center gap-1 text-white"
             >
-                <div class="bg-sky-300 rounded-full p-2">
-                    <i data-lucide="user" class="text-white"></i>
-                </div>
+                <i data-lucide="user" class="text-white"></i>
                 <span class="text-xs font-bold text-white">
                     PROFILE
                 </span>

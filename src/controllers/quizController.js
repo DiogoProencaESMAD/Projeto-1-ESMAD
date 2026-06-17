@@ -12,10 +12,38 @@ export async function initQuiz() {
   const answersEl = document.getElementById("answers")
   const resultEl = document.getElementById("result")
   const nextBtn = document.getElementById("nextBtn")
+  const questionNumberEl = document.getElementById("questionNumber")
 
   if (!questionEl || !answersEl || !resultEl || !nextBtn) {
     console.error("Quiz page elements not found")
     return
+  }
+
+  // Bottom navigation buttons
+  const goProfile = document.getElementById("goProfile")
+  const goQuiz = document.getElementById("goQuiz")
+  const goCamera = document.getElementById("goCamera")
+  const goChat = document.getElementById("goChat")
+  const goAchievements = document.getElementById("goAchievements")
+
+  if (goProfile) {
+    goProfile.addEventListener("click", () => {
+      window.location.href = "/src/views/profile.html"
+    })
+  }
+
+  if (goCamera) {
+    goCamera.addEventListener("click", () => {
+      window.location.href = "/src/views/camera.html"
+    })
+  }
+
+  // `initChatOverlay()` attaches the click handler for `goChat`.
+
+  if (goAchievements) {
+    goAchievements.addEventListener("click", () => {
+      window.location.href = "/src/views/achievements.html"
+    })
   }
 
   let resultsShown = false
@@ -69,6 +97,10 @@ export async function initQuiz() {
 
     answering = false
 
+    const currentQuestionNum = quizModel.currentIndex + 1
+    const totalQuestions = quizModel.questions.length
+    questionNumberEl.textContent = `Pergunta ${currentQuestionNum} de ${totalQuestions}`
+
     questionEl.textContent = q.question
     answersEl.innerHTML = ""
     resultEl.innerHTML = ""
@@ -77,7 +109,7 @@ export async function initQuiz() {
       const btn = document.createElement("button")
       btn.type = "button"
       btn.textContent = answerText
-      btn.classList.add("quiz-answer-btn")
+      btn.className = "w-full py-3 bg-sky-500 hover:bg-sky-600 active:scale-95 transition rounded-lg text-white text-lg font-medium"
 
       btn.onclick = () => {
         if (answering) return

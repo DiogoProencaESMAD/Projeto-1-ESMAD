@@ -12,6 +12,32 @@ export async function initCamera() {
   applyDaltonismTheme(user)
   initChatOverlay()
 
+  // Bottom navigation buttons (mirror profile controller behavior)
+  const goProfile = document.getElementById("goProfile")
+  const goQuiz = document.getElementById("goQuiz")
+  const goChat = document.getElementById("goChat")
+  const goAchievements = document.getElementById("goAchievements")
+
+  if (goProfile) {
+    goProfile.addEventListener("click", () => {
+      window.location.href = "/src/views/profile.html"
+    })
+  }
+
+  if (goQuiz) {
+    goQuiz.addEventListener("click", () => {
+      window.location.href = "/src/views/quiz.html"
+    })
+  }
+
+  // `initChatOverlay()` attaches the click handler for `goChat`.
+
+  if (goAchievements) {
+    goAchievements.addEventListener("click", () => {
+      window.location.href = "/src/views/achievements.html"
+    })
+  }
+
   const video = document.getElementById("video")
   const canvas = document.getElementById("canvas")
   const swatch = document.getElementById("swatch")

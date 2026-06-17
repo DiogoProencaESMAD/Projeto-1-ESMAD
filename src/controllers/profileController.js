@@ -163,14 +163,7 @@ export async function initProfile() {
     })
   }
 
-  if (goChat) {
-    goChat.addEventListener("click", () => {
-      const chatOverlay = document.getElementById("chatOverlay")
-      if (chatOverlay) {
-        chatOverlay.classList.toggle("hidden")
-      }
-    })
-  }
+  // `initChatOverlay()` attaches the click handler for `goChat`.
 
   if (goAchievements) {
     goAchievements.addEventListener("click", () => {

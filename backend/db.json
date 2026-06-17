@@ -75,14 +75,14 @@
       "username": "afalc",
       "password": "1234",
       "role": "user",
-      "xp": 460,
-      "level": 5,
+      "xp": 1410,
+      "level": 15,
       "daltonismType": "normal",
       "colorScheme": "auto",
       "displayMode": "light",
       "profileImage": "",
-      "quizzesCompleted": 6,
-      "perfectQuizzes": 2,
+      "quizzesCompleted": 21,
+      "perfectQuizzes": 3,
       "highScore": 10,
       "id": "HyiZRw8"
     },
@@ -579,6 +579,14 @@
       "description": "Reached 250 XP",
       "unlockedAt": 1781657358155,
       "id": "WFlFpL3"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "quiz_veteran",
+      "title": "Quiz Veteran",
+      "description": "Completed 10 quizzes",
+      "unlockedAt": 1781664719369,
+      "id": "UFfchxt"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
