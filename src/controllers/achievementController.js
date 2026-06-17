@@ -28,13 +28,18 @@ export async function initAchievements() {
   const level = user.level || 1
   const currentLevelXP = xp % 100
   const percent = (currentLevelXP / 100) * 100
+  const levelValueEl = document.getElementById("levelValue")
 
   if (xpBarEl) {
     xpBarEl.style.width = `${percent}%`
   }
 
   if (xpTextEl) {
-    xpTextEl.textContent = `XP: ${xp} | Level: ${level}`
+    xpTextEl.textContent = `XP: ${currentLevelXP} / 100`
+  }
+
+  if (levelValueEl) {
+    levelValueEl.textContent = `Level ${level}`
   }
 
   const unlockedAchievements = await achievementModel.getAll(user.id)
@@ -46,13 +51,27 @@ export async function initAchievements() {
   })
 
   listEl.innerHTML = orderedAchievements
-    .map(
-      (a) => `
-    <div class="ach ${unlockedIds.has(a.achievementId) ? "unlocked" : "locked"}">
-      <div class="title">${escapeHtml(a.title)}</div>
-      <div class="desc">${escapeHtml(a.description)}</div>
+    .map((a) => {
+      const unlocked = unlockedIds.has(a.achievementId)
+      const cardClasses = unlocked
+        ? "bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4"
+        : "bg-slate-100/80 rounded-2xl p-4 shadow-sm border border-slate-200 flex items-center gap-4 opacity-80"
+      const titleClasses = unlocked ? "font-bold text-lg text-slate-900" : "font-bold text-lg text-slate-500"
+      const descriptionClasses = unlocked ? "text-sm text-gray-500" : "text-sm text-slate-500"
+
+      return `
+    <div class="${cardClasses}">
+      <div class="flex-1">
+        <h4 class="${titleClasses}">
+          ${escapeHtml(a.title)}
+        </h4>
+        <p class="${descriptionClasses}">
+          ${escapeHtml(a.description)}
+        </p>
+      </div>
+      ${unlocked ? "" : "<span class='text-xs font-semibold uppercase tracking-[0.15em] text-slate-500'>Locked</span>"}
     </div>
   `
-    )
+    })
     .join("")
 }

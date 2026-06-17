@@ -75,14 +75,14 @@
       "username": "afalc",
       "password": "1234",
       "role": "user",
-      "xp": 360,
-      "level": 4,
+      "xp": 460,
+      "level": 5,
       "daltonismType": "normal",
       "colorScheme": "auto",
       "displayMode": "light",
       "profileImage": "",
-      "quizzesCompleted": 4,
-      "perfectQuizzes": 1,
+      "quizzesCompleted": 6,
+      "perfectQuizzes": 2,
       "highScore": 10,
       "id": "HyiZRw8"
     },
@@ -531,6 +531,54 @@
       "description": "Scored at least 7 points in a quiz",
       "unlockedAt": 1781652749406,
       "id": "5_EL2Px"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "almost_perfect",
+      "title": "Almost Perfect",
+      "description": "Scored at least 9 points in a quiz",
+      "unlockedAt": 1781657019491,
+      "id": "I9-T8SM"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "quiz_trio",
+      "title": "Quiz Trio",
+      "description": "Completed 3 quizzes",
+      "unlockedAt": 1781657357958,
+      "id": "381_tGa"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "quiz_regular",
+      "title": "Quiz Regular",
+      "description": "Completed 5 quizzes",
+      "unlockedAt": 1781657358016,
+      "id": "yHTHaSo"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "xp_50",
+      "title": "Getting Started",
+      "description": "Reached 50 XP",
+      "unlockedAt": 1781657358047,
+      "id": "leMU3U2"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "xp_100",
+      "title": "Hundred Club",
+      "description": "Reached 100 XP",
+      "unlockedAt": 1781657358093,
+      "id": "12KW7ER"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "xp_250",
+      "title": "XP Collector",
+      "description": "Reached 250 XP",
+      "unlockedAt": 1781657358155,
+      "id": "WFlFpL3"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
