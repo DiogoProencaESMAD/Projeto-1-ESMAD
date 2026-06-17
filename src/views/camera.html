@@ -1,35 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Color Detector</title>
-  <link rel="stylesheet" href="/styles/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+
+
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- LUCIDE -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
 </head>
 <body>
 
-  <div class="camera-app">
-    <div class="app-brand logo-only">
-      <img class="brand-logo small" src="/public/logo-huebly.svg" alt="Huebly logo">
-    </div>
-    <a class="back-link" href="./profile.html">← Back to Profile</a>
+<!-- HEADER -->
+    <header class="bg-sky-500 shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <button
+                type="button"
+                aria-label="Perfil"
+                class="p-2 rounded-lg hover:bg-sky-400 transition"
+                onclick="window.location.href='./profile.html'"
+            >
+                <i data-lucide="arrow-left" class="text-white w-6 h-6"></i>
+            </button>
+                <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
+                <h1 class="sr-only">Huebly</h1>
+            </div>
+        </div>
+    </header>
 
-    <video id="video" autoplay playsinline></video>
-    <canvas id="canvas" style="display:none;"></canvas>
+  <!-- MAIN -->
+    <main class="flex-1 w-full">
 
-    <div id="swatch"></div>
-    <div id="color-name">Waiting...</div>
-    <div id="color-meta"></div>
-    <div id="status"></div>
+        <!-- CAMERA VIEW -->
+        <section class="relative overflow-hidden w-full h-full bg-black">
 
-    <button id="freezeBtn" type="button">Freeze</button>
-  </div>
+            <!-- CAMERA IMAGE / VIDEO -->
+            <video
+                id="video"
+                autoplay
+                playsinline
+                muted
+                class="w-full h-full object-cover"
+            ></video>
+            <canvas id="canvas" class="hidden"></canvas>
+
+            <!-- COLOR DETECTION -->
+            <div
+                class="absolute top-4 left-4 right-4 bg-sky-500/80 backdrop-blur-sm rounded-lg px-4 py-3 flex flex-col gap-3"
+            >
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <div id="color-name" class="text-white text-lg font-semibold">
+                            Cor: Branco Neve
+                        </div>
+                        <div id="color-meta" class="text-white text-sm opacity-90">
+                            #FFFFFF
+                        </div>
+                    </div>
+                    <div id="swatch" class="w-12 h-12 bg-white border-2 border-black rounded"></div>
+                </div>
+                <div id="status" class="text-sm text-white opacity-90">Initializing...</div>
+            </div>
+
+            <!-- FREEZE BUTTON -->
+            <div class="fixed bottom-24 left-0 right-0 flex justify-center">
+                <button
+                    id="freezeBtn"
+                    type="button"
+                    class="bg-red-500 hover:bg-red-600 active:scale-95 transition px-10 py-3 rounded-xl text-white font-semibold text-lg shadow-lg"
+                >
+                    FREEZE
+                </button>
+            </div>
+        </section>
+    </main>
+
+<!-- BOTTOM NAVIGATION -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-sky-500 border-t border-sky-400">
+        <div class="max-w-md mx-auto grid grid-cols-4 py-3">
+            
+            <!-- QUIZ BUTTON -->
+            <button
+                id="goQuiz"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="clipboard-list"></i>
+                <span class="text-xs font-bold">
+                    QUIZZ
+                </span>
+            </button>
+            
+            <!-- CAMERA BUTTON -->
+            <button
+                id="goCamera"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="camera"></i>
+                <span class="text-xs font-bold">
+                    CAMERA
+                </span>
+            </button>
+
+            <!-- PROFILE BUTTON -->
+            <button
+                id="goProfile"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <div class="bg-sky-300 rounded-full p-2">
+                    <i data-lucide="user" class="text-white"></i>
+                </div>
+                <span class="text-xs font-bold text-white">
+                    PROFILE
+                </span>
+            </button>
+
+            <!-- CHAT BUTTON -->
+            <button
+                id="goChat"
+                type="button"
+                class="flex flex-col items-center gap-1 text-white"
+            >
+                <i data-lucide="message-square"></i>
+                <span class="text-xs font-bold">
+                    FORUM
+                </span>
+            </button>
+        </div>
+    </nav>
+
 
   <div id="chatOverlay" class="hidden"></div>
-  <button id="goChat" type="button" class="chat-toggle">Chat</button>
 
   <script src="../shared/ntc.js"></script>
+
   <script type="module">
     import { initCamera } from "../controllers/cameraController.js"
+    lucide.createIcons();
     initCamera()
   </script>
 </body>
