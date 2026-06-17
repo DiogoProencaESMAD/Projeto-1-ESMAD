@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-6 py-10 bg-white overflow-hidden">
+
+    <div class="w-full max-w-md">
+
+        <!-- LOGO -->
+        <div class="flex justify-center mb-8">
+            <img
+                src="../../../public/Huebly.png"
+                alt="Huebly"
+                class="w-56 sm:w-64 object-contain"
+            >
+        </div>
+
+        <!-- TITLE -->
+        <h1 class="text-center text-3xl font-semibold mb-10">
+            Create Account
+        </h1>
+
+        <!-- FORM -->
+        <form id="registerForm" class="space-y-8">
+
+            <!-- NAME -->
+            <div class="relative">
+                <label
+                    for="registerUsername"
+                    class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
+                >
+                    Name
+                </label>
+
+                <input
+                    id="registerUsername"
+                    type="text"
+                    class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
+                >
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="relative">
+                <label
+                    for="registerPassword"
+                    class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
+                >
+                    Password
+                </label>
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    class="w-full h-14 pl-6 pr-12 rounded-[10px] border-2 border-black outline-none"
+                >
+
+                <button
+                    id="passwordToggle"
+                    type="button"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
+                    aria-label="Show password"
+                >
+                    <i data-lucide="eye"></i>
+                </button>
+            </div>
+
+            
+            <!-- CREATE ACCOUNT BUTTON -->
+            <button
+                id="registerButton"
+                type="submit"
+                class="w-full h-12 bg-sky-500 rounded-[10px] text-white text-xl font-semibold transition-transform active:scale-95 hover:cursor-pointer"
+            >
+                Create Account
+            </button>
+
+            <!-- LOGIN LINK -->
+            <div class="text-center text-lg sm:text-xl">
+                <span>Already have an account? </span>
+
+                <button
+                    id="loginLink"
+                    type="button"
+                    class="text-sky-500 underline"
+                >
+                    Log in now
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+        <script>
+            (function () {
+                try {
+                    if (localStorage.getItem("huebly:displayMode") === "dark") {
+                        document.documentElement.classList.add("dark")
+                    }
+                } catch (e) {}
+            })()
+        </script>
+        <script type="module">
+                lucide.createIcons();
+
+                import {
+                        initRegister,
+                        loginLinkHandler,
+                        initPasswordToggle
+                } from "../../controllers/authController.js";
+
+                initRegister();
+                loginLinkHandler();
+                initPasswordToggle('registerPassword','passwordToggle');
+        </script>
+
+</body>
+</html>

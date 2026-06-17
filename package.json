@@ -1,0 +1,13 @@
+{
+  "name": "huebly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Huebly — color blindness support web app",
+  "scripts": {
+    "api": "json-server --watch backend/db.json --port 3000",
+    "start": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}

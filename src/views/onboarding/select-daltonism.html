@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Type</title>
+
+    <!-- TAILWIND IMPORT -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- GLOBAL CSS IMPORT -->
+    <link rel="stylesheet" href="/styles/global.css">
+
+
+    <!-- LUCIDE ICONS IMPORT -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+</head>
+<body class="bg-white min-h-screen overflow-hidden">
+
+  <!-- HEADER -->
+    <header class="bg-sky-500 shadow-sm">
+        <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="/public/Huebly.png" alt="Huebly logo" class="w-40 h-15 object-contain">
+                <h1 class="sr-only">Huebly</h1>
+            </div>
+        </div>
+    </header>
+
+<form id="daltonismForm" class="space-y-4">
+
+        <select id="daltonismType" class="hidden">
+            <option value="normal"></option>
+            <option value="protanopia"></option>
+            <option value="deuteranopia"></option>
+            <option value="tritanopia"></option>
+            <option value="monochromacy"></option>
+        </select>
+
+    <!-- PROTANOPIA -->
+    <label class="block cursor-pointer">
+        <input
+            type="radio"
+            name="visionType"
+            data-value="protanopia"
+            class="peer sr-only"
+        >
+        <div class="flex items-center p-4 bg-white rounded-2xl border border-gray-200 shadow-sm transition
+                    peer-checked:border-sky-500
+                    peer-checked:border-2
+                    peer-checked:bg-blue-50">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 mr-4 shrink-0">
+                <div class="w-3 h-4 bg-red-500 rounded"></div>
+            </div>
+            <div>
+                <div class="font-semibold">
+                    Protanopia
+                </div>
+                <div class="text-xs">
+                    Red color insensitivity
+                </div>
+            </div>
+        </div>
+    </label>
+
+    <!-- MONOCROMACIA -->
+    <label class="block cursor-pointer">
+        <input
+            type="radio"
+            name="visionType"
+            data-value="monochromacy"
+            class="peer sr-only"
+        >
+        <div class="flex items-center p-4 bg-white rounded-2xl border border-gray-200 shadow-sm transition
+                    peer-checked:border-sky-500
+                    peer-checked:border-2
+                    peer-checked:bg-blue-50">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-gray-100 mr-4 shrink-0">
+                <div class="w-3 h-4 bg-gray-500 rounded"></div>
+            </div>
+            <div>
+                <div class="font-semibold">
+                    Monochromacy
+                </div>
+                <div class="text-xs">
+                    Gray tone perception
+                </div>
+            </div>
+        </div>
+    </label>
+
+    <!-- DEUTERANOPIA -->
+    <label class="block cursor-pointer">
+        <input
+            type="radio"
+            name="visionType"
+            data-value="deuteranopia"
+            class="peer sr-only"
+        >
+        <div class="flex items-center p-4 bg-white rounded-2xl border border-gray-200 shadow-sm transition
+                    peer-checked:border-sky-500
+                    peer-checked:border-2
+                    peer-checked:bg-blue-50">
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-100 mr-4 shrink-0">
+                <div class="w-3 h-4 bg-green-600 rounded"></div>
+            </div>
+            <div>
+                <div class="font-semibold">
+                    Deuteranopia
+                </div>
+                <div class="text-xs">
+                    Green color insensitivity
+                </div>
+            </div>
+        </div>
+    </label>
+
+    <!-- TRITANOPIA -->
+    <label class="block cursor-pointer">
+        <input
+            type="radio"
+            name="visionType"
+            data-value="tritanopia"
+            class="peer sr-only"
+        >
+        <div class="flex items-center p-4 bg-white rounded-2xl border border-gray-200 shadow-sm transition
+                    peer-checked:border-sky-500
+                    peer-checked:border-2
+                    peer-checked:bg-blue-50">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 mr-4 shrink-0">
+                <div class="w-3 h-4 bg-blue-600 rounded"></div>
+            </div>
+            <div>
+                <div class="font-semibold">
+                    Tritanopia
+                </div>
+
+                <div class="text-xs">
+                    Blue color insensitivity
+                </div>
+            </div>
+        </div>
+    </label>
+
+    <!-- NORMAL VISION -->
+    <label class="block cursor-pointer">
+        <input
+            type="radio"
+            name="visionType"
+            data-value="normal"
+            checked
+            class="peer sr-only"
+        >
+        <div class="flex items-center p-4 bg-white rounded-2xl border border-gray-200 shadow-sm transition
+                    peer-checked:border-sky-500
+                    peer-checked:border-2
+                    peer-checked:bg-blue-50">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-sky-500 mr-4 shrink-0">
+                <div class="w-4 h-3 bg-white rounded"></div>
+            </div>
+            <div>
+                <div class="font-semibold">
+                    Normal Vision
+                </div>
+
+                <div class="text-xs">
+                    Full color perception
+                </div>
+            </div>
+        </div>
+    </label>
+
+    <!-- ACTIONS -->
+    <div class="pt-4 flex flex-col gap-4">
+        <button
+            type="submit"
+            class="w-full bg-sky-500 text-white py-3 rounded-xl font-semibold active:scale-95"
+        >
+            CONFIRM
+        </button>
+        <p class="text-center text-sm">
+            If you don't know your type of color blindness, you can take a test.
+        </p>
+    </div>
+    <button
+            type="button"
+            id="startTest"
+            class="w-full bg-sky-300 top-[10px] text-black py-3 rounded-xl font-semibold active:scale-95"
+        >
+            TAKE TEST NOW!
+        </button>
+  </form>
+
+  <div id="daltonismTestPanel" class="hidden max-w-md mx-auto px-4 py-8">
+    
+    <!-- PROGRESS -->
+    <section class="mb-8">
+      <div class="flex justify-between mb-2">
+        <span id="testProgress" class="text-sky-400 text-sm font-medium"></span>
+      </div>
+    </section>
+
+    <!-- QUESTION -->
+    <section class="text-center mb-8">
+      <h2 class="text-xl font-bold text-gray-800 mb-2">
+        What number do you see below?
+      </h2>
+      <p class="text-sm text-gray-500">
+        Look at the image and select the correct option.
+      </p>
+    </section>
+    
+    <!-- IMAGE -->
+    <canvas id="testPlate" class="test-plate" width="320" height="320"></canvas>
+    
+    <br>
+
+    <!-- ANSWERS -->
+    <div id="testAnswers" class="test-actions"></div>
+
+    <div id="testResult" class="test-result hidden"></div>
+    <div class="test-actions">
+      <button id="useEstimatedTypeBtn" type="button" class="hidden">Use estimated result</button>
+      <button id="restartTestBtn" type="button" class="hidden">Run test again</button>
+      <button id="backToSelectionBtn" type="button">Back to manual selection</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initDaltonism } from "../../controllers/onboardingController.js"
+    lucide.createIcons();
+    initDaltonism()
+  </script>
+</body>
+</html>
