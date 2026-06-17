@@ -11,12 +11,41 @@ export function initChatOverlay() {
     return
   }
 
+  // Prevent multiple initializations when controllers call this multiple times
+  if (overlay.dataset.chatInitialized === "true") {
+    return
+  }
+  overlay.dataset.chatInitialized = "true"
+
   overlay.innerHTML = `
-    <div id="chatMessages" class="chat-messages"></div>
-    <input id="chatInput" type="text" autocomplete="off" placeholder="Write a message..." />
-    <button id="sendChat" type="button">Send</button>
-    <div id="chatStatus" class="chat-status"></div>
+  <div
+    id="forumOverlay"
+    class="w-full bg-sky-500 rounded-t-3xl p-4 shadow-xl flex flex-col overflow-hidden max-h-80"
+  > 
+    <div id="chatMessages" class="flex-1 mb-2 bg-white rounded-xl p-3 overflow-y-auto"></div>
+    <div class="relative">
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Escreve uma mensagem..."
+                class="w-full h-12 px-4 text-base font-medium outline-none bg-white border border-gray-200 rounded-lg"
+            >
+            <button
+                id="sendChat"
+                type="button"
+                aria-label="Enviar mensagem"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-sky-500 hover:text-sky-600 transition"
+            >
+                <i data-lucide="send" class="w-5 h-5"></i>
+            </button>
+        </div>
+    <div id="chatStatus" class="hidden"></div>
+  </div>
   `
+
+  if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+    lucide.createIcons()
+  }
 
   const input = overlay.querySelector("#chatInput")
   const sendBtn = overlay.querySelector("#sendChat")
@@ -29,35 +58,59 @@ export function initChatOverlay() {
 
       if (!user) {
         statusEl.textContent = "Please log in before sending messages."
-        sendBtn.disabled = true
-        input.disabled = true
-        container.innerHTML = ""
+        if (sendBtn) sendBtn.disabled = true
+        if (input) input.disabled = true
+        if (container) container.innerHTML = ""
         return
       }
 
-      const messages = await getMessages()
-      container.innerHTML = messages
-        .map(
-          (m) =>
-            `<p><strong>${escapeHtml(m.user)}:</strong> ${escapeHtml(m.text)}</p>`
-        )
-        .join("")
+      let messagesRes = await getMessages()
+      let messages = []
+      if (Array.isArray(messagesRes)) {
+        messages = messagesRes
+      } else if (messagesRes && Array.isArray(messagesRes.data)) {
+        messages = messagesRes.data
+      }
+
+      if (!container) return
+
+      if (messages.length === 0) {
+        container.innerHTML = `<div class="text-sm text-gray-600">Sem mensagens ainda.</div>`
+      } else {
+        container.innerHTML = messages
+          .map(
+            (m) => `
+          <div class="flex gap-2 mb-2">
+            <span class="font-semibold text-lg shrink-0">
+                ${escapeHtml(m.user)}
+            </span>
+            <p class="text-base">
+                ${escapeHtml(m.text)}
+            </p>
+          </div>
+        `
+          )
+          .join("")
+      }
+
       container.scrollTop = container.scrollHeight
       statusEl.textContent = `Chat loaded (${messages.length} messages)`
-      sendBtn.disabled = false
-      input.disabled = false
+      if (sendBtn) sendBtn.disabled = false
+      if (input) input.disabled = false
     } catch (err) {
       console.error("Render error:", err)
-      statusEl.textContent = "Error loading chat: " + err.message
+      statusEl.textContent = "Error loading chat: " + (err && err.message ? err.message : String(err))
     }
   }
 
   async function handleSend(e) {
-    e.preventDefault()
-    e.stopPropagation()
+    if (e && typeof e.preventDefault === 'function') {
+      e.preventDefault()
+      e.stopPropagation()
+    }
 
     const user = await getCurrentUser()
-    const text = input.value.trim()
+    const text = input ? String(input.value || "").trim() : ""
     if (!text || !user) {
       statusEl.textContent = "Please enter a message"
       return
@@ -67,23 +120,27 @@ export function initChatOverlay() {
       statusEl.textContent = "Sending..."
       const message = createMessage(user.username, text)
       await sendMessage(message)
-      input.value = ""
+      if (input) input.value = ""
       statusEl.textContent = "Message sent"
       await render()
     } catch (err) {
       console.error("Send failed:", err)
-      statusEl.textContent = "Error: " + err.message
+      statusEl.textContent = "Error: " + (err && err.message ? err.message : String(err))
     }
   }
 
-  sendBtn.addEventListener("click", handleSend)
+  if (sendBtn) {
+    sendBtn.addEventListener("click", handleSend)
+  }
 
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault()
-      handleSend(e)
-    }
-  })
+  if (input) {
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault()
+        handleSend(e)
+      }
+    })
+  }
 
   overlay.addEventListener("click", (e) => {
     e.stopPropagation()

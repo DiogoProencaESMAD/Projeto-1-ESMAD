@@ -12,7 +12,6 @@
   --primary-text: #ffffff;
   --secondary-bg: #f4f6f8;
   --chat-bg: #fafafa;
-  --overlay-bg: rgba(0, 0, 0, 0.5);
   --xp-color: #4caf50;
 }
 
@@ -115,18 +114,9 @@ body.mode-dark {
   --border-color: #3a4657;
   --secondary-bg: #222a36;
   --chat-bg: #161c25;
-  --overlay-bg: rgba(0, 0, 0, 0.7);
 }
 
-button,
-input,
-select {
-  font: inherit;
-}
 
-button {
-  cursor: pointer;
-}
 
 a {
   color: var(--primary-color);
@@ -143,8 +133,8 @@ form {
 }
 
 input,
-select,
-button {
+select
+ {
   width: 100%;
   padding: 12px 14px;
   margin: 8px 0;
@@ -154,17 +144,7 @@ button {
   color: var(--text-color);
 }
 
-button {
-  border: none;
-  background: var(--primary-color);
-  color: var(--primary-text);
-  transition: opacity 0.2s ease;
-}
 
-button:hover {
-  opacity: 0.95;
-  background: var(--primary-hover);
-}
 
 .page-container {
   max-width: 560px;
@@ -275,11 +255,6 @@ button:hover {
   text-align: center;
 }
 
-.link-button {
-  background: var(--secondary-bg);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-}
 
 .back-link {
   display: inline-block;
@@ -288,20 +263,7 @@ button:hover {
   font-size: 14px;
 }
 
-#chatOverlay {
-  position: fixed;
-  right: 12px;
-  bottom: 72px;
-  left: 12px;
-  width: auto;
-  max-width: 350px;
-  background: var(--surface-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
+
 
 .chat-messages {
   height: 220px;
@@ -341,28 +303,7 @@ button:hover {
   margin-bottom: 12px;
 }
 
-.quiz-box .answers button {
-  display: block;
-  width: 100%;
-  margin: 6px 0;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: none;
-  background: var(--primary-color);
-  color: var(--primary-text);
-}
 
-.quiz-box .answers button:hover {
-  background: var(--primary-hover);
-}
-
-.quiz-box .answers button.is-selected {
-  box-shadow: 0 0 0 3px var(--border-color);
-}
-
-.quiz-box .answers button:disabled {
-  opacity: 0.92;
-}
 
 #result {
   margin-top: 12px;
@@ -553,9 +494,6 @@ button:hover {
   min-width: 0;
 }
 
-.settings-row button {
-  margin: 0;
-}
 
 @media (min-width: 480px) {
   .settings-row.compact-row {

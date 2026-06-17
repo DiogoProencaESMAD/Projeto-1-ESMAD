@@ -31,6 +31,7 @@ export async function initProfile() {
   const closeSettingsBtn = document.getElementById("closeSettingsBtn")
   const changePasswordBtn = document.getElementById("changePasswordBtn")
   const changeUsernameBtn = document.getElementById("changeUsernameBtn")
+  const changeVisionTypeBtn = document.getElementById("changeVisionTypeBtn")
   const profileImageSelect = document.getElementById("profileImageSelect")
   const saveProfileImageBtn = document.getElementById("saveProfileImageBtn")
   const colorSchemeSelect = document.getElementById("colorSchemeSelect")
@@ -307,6 +308,12 @@ export async function initProfile() {
         renderUserInfo(result.user)
         alert("Username changed successfully")
         settingsModal.classList.add("hidden")
+      })
+    }
+
+    if (changeVisionTypeBtn) {
+      changeVisionTypeBtn.addEventListener("click", () => {
+        window.location.href = "/src/views/onboarding/select-daltonism.html"
       })
     }
 

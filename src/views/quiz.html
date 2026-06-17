@@ -8,15 +8,13 @@
     <!-- TAILWIND -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="/styles/global.css">
 
     <!-- LUCIDE -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body>
+<body class="overflow-hidden bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100">
 
   <!-- HEADER -->
     <header class="bg-sky-500 shadow-sm">
@@ -33,17 +31,17 @@
 
         <!-- QUIZ FORM -->
         <div
-            class="bg-sky-100 rounded-3xl p-6 md:p-8 flex flex-col items-center gap-10"
+            class="bg-sky-200 rounded-3xl p-6 md:p-8 flex flex-col items-center gap-10"
         >
             <!-- QUESTION NUMBER -->
-            <p id="questionNumber" class="text-sky-400 text-lg font-bold">
-                Pergunta 1 de 10
+            <p id="questionNumber" class="text-sky-700 text-lg font-bold dark:text-sky-300">
+                Question 1 of 10
             </p>
 
             <!-- QUESTION -->
             <h2
                 id="question"
-                class="text-center text-2xl font-medium text-black"
+                class="text-center text-2xl font-medium text-black dark:t0"
             >
                 Loading...
             </h2>
@@ -113,6 +111,8 @@
             </button>
         </div>
     </nav>
+
+  <div id="chatOverlay" class="hidden fixed bottom-24 left-0 right-0 max-w-md mx-auto z-40"></div>
 
   <script type="module">
     import { initQuiz } from "../controllers/quizController.js"

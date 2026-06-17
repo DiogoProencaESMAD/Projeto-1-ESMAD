@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +11,11 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../../styles/global.css">
 
-    <!-- OUTFIT FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- LUCIDE -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center px-6 bg-white">
+<body class="min-h-screen flex items-center justify-center px-6 bg-white overflow-hidden">
 
     <div class="w-full max-w-md">
 
@@ -47,24 +42,29 @@
                     for="username"
                     class="absolute -top-3.5 left-4 bg-white px-2 text-lg font-semibold"
                 >
-                    Nome
+                    Name
                 </label>
 
                 <input
                     id="username"
                     type="text"
-                    placeholder="João Silva"
                     class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
                 >
             </div>
 
             <!-- PASSWORD -->
             <div class="relative">
+                <label
+                    for="password"
+                    class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
+                >
+                    Password
+                </label>
+
                 <input
                     id="password"
                     type="password"
-                    placeholder="••••••••"
-                    class="w-full h-14 pl-6 pr-12 rounded-[10px] border-2 border-black outline-none"                    
+                    class="w-full h-14 pl-6 pr-12 rounded-[10px] border-2 border-black outline-none"
                 >
 
                 <button
@@ -88,14 +88,14 @@
 
             <!-- REGISTER LINK -->
             <div class="text-center text-lg sm:text-xl">
-                <span>Ainda não tens conta? </span>
+                <span>Don't have an account yet? </span>
 
                 <button
                     id="registerLink"
                     type="button"
                     class="text-sky-500 underline"
                 >
-                    Cria já
+                    Create account
                 </button>
             </div>
 
@@ -103,21 +103,30 @@
 
     </div>
 
-    <script type="module">
+        <script>
+            (function () {
+                try {
+                    if (localStorage.getItem("huebly:displayMode") === "dark") {
+                        document.documentElement.classList.add("dark")
+                    }
+                } catch (e) {}
+            })()
+        </script>
+        <script type="module">
 
-        lucide.createIcons();
+                lucide.createIcons();
 
-        import {
-            initLogin,
-            registerLinkHandler,
-            initPasswordToggle
-        } from "../../controllers/authController.js";
+                import {
+                        initLogin,
+                        registerLinkHandler,
+                        initPasswordToggle
+                } from "../../controllers/authController.js";
 
-        initLogin();
-        registerLinkHandler();
-        initPasswordToggle('password','passwordToggle');
+                initLogin();
+                registerLinkHandler();
+                initPasswordToggle('password','passwordToggle');
 
-    </script>
+        </script>
 
 </body>
 </html>

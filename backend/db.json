@@ -75,14 +75,14 @@
       "username": "afalc",
       "password": "1234",
       "role": "user",
-      "xp": 1410,
-      "level": 15,
+      "xp": 2050,
+      "level": 21,
       "daltonismType": "normal",
       "colorScheme": "auto",
       "displayMode": "light",
-      "profileImage": "",
-      "quizzesCompleted": 21,
-      "perfectQuizzes": 3,
+      "profileImage": "/public/avatars/avatar-sunset.svg",
+      "quizzesCompleted": 29,
+      "perfectQuizzes": 6,
       "highScore": 10,
       "id": "HyiZRw8"
     },
@@ -169,6 +169,48 @@
       "text": "patati patata",
       "timestamp": "2026-06-10T18:34:05.929Z",
       "id": "rX0Z7mfHBHw"
+    },
+    {
+      "user": "afalc",
+      "text": "sdasdas",
+      "timestamp": "2026-06-17T03:36:52.014Z",
+      "id": "gMmjHVj"
+    },
+    {
+      "user": "afalc",
+      "text": "asdasda",
+      "timestamp": "2026-06-17T03:36:56.736Z",
+      "id": "WZPlyIs"
+    },
+    {
+      "user": "afalc",
+      "text": "dasdsadas",
+      "timestamp": "2026-06-17T03:39:04.033Z",
+      "id": "PCsJdH-"
+    },
+    {
+      "user": "afalc",
+      "text": "dasdsadsa",
+      "timestamp": "2026-06-17T03:39:36.650Z",
+      "id": "HNXWEc8"
+    },
+    {
+      "user": "afalc",
+      "text": "dasdsad",
+      "timestamp": "2026-06-17T16:21:18.448Z",
+      "id": "xf3ZHpj"
+    },
+    {
+      "user": "afalc",
+      "text": "dasdsa",
+      "timestamp": "2026-06-17T17:04:29.990Z",
+      "id": "SLmSutv"
+    },
+    {
+      "user": "afalc",
+      "text": "sadasdasdasdasd",
+      "timestamp": "2026-06-17T17:04:44.619Z",
+      "id": "SOVjDXM"
     }
   ],
   "achievements": [
@@ -587,6 +629,14 @@
       "description": "Completed 10 quizzes",
       "unlockedAt": 1781664719369,
       "id": "UFfchxt"
+    },
+    {
+      "userId": "HyiZRw8",
+      "achievementId": "master",
+      "title": "Color Master",
+      "description": "Perfect quiz score",
+      "unlockedAt": 1781715896129,
+      "id": "r2CDrYX"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

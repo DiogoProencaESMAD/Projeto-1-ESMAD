@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +10,14 @@
     <!-- TAILWIND -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="/styles/global.css">
 
     <!-- LUCIDE -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen overflow-hidden">
 
 <!-- HEADER -->
     <header class="bg-sky-500 shadow-sm">
@@ -49,14 +47,14 @@
 
             <!-- COLOR DETECTION -->
             <div
-                class="absolute top-4 left-4 right-4 bg-sky-500/80 backdrop-blur-sm rounded-lg px-4 py-3 flex flex-col gap-3"
+                class="absolute top-4 left-4 right-4 bg-sky-500 backdrop-blur-sm rounded-lg px-4 py-3 flex flex-col gap-3"
             >
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <div id="color-name" class="text-white text-lg font-semibold">
-                            Cor: Branco Neve
+                            Color: Snow White
                         </div>
-                        <div id="color-meta" class="text-white text-sm opacity-90">
+                        <div id="color-meta" class="text-white text-sm ">
                             #FFFFFF
                         </div>
                     </div>
@@ -134,8 +132,7 @@
         </div>
     </nav>
 
-
-  <div id="chatOverlay" class="hidden"></div>
+  <div id="chatOverlay" class="hidden fixed bottom-24 left-0 right-0 max-w-md mx-auto "></div>
 
   <script src="../shared/ntc.js"></script>
 

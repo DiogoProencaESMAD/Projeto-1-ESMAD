@@ -25,13 +25,24 @@ export function resolveDisplayMode(typeOrUser, explicitMode) {
 
 export function applyDaltonismTheme(typeOrUser, explicitScheme) {
   const body = document.body
-  if (!body) return
+  const root = document.documentElement
+  if (!body || !root) return
 
   Object.values(DALTONISM_THEMES).forEach((themeClass) => {
     body.classList.remove(themeClass)
   })
 
-  body.classList.remove("mode-light", "mode-dark")
-  body.classList.add(getDaltonismTheme(resolveThemeType(typeOrUser, explicitScheme)))
-  body.classList.add(`mode-${resolveDisplayMode(typeOrUser)}`)
+  body.classList.remove("mode-light", "mode-dark", "dark")
+  root.classList.remove("dark")
+
+  const themeClass = getDaltonismTheme(resolveThemeType(typeOrUser, explicitScheme))
+  body.classList.add(themeClass)
+
+  const displayMode = resolveDisplayMode(typeOrUser)
+  body.classList.add(`mode-${displayMode}`)
+
+  if (displayMode === "dark") {
+    body.classList.add("dark")
+    root.classList.add("dark")
+  }
 }

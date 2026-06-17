@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta</title>
+    <title>Create Account</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -11,16 +11,11 @@
     <!-- Global CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- Lucide -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center px-6 py-10 bg-white">
+<body class="min-h-screen flex items-center justify-center px-6 py-10 bg-white overflow-hidden">
 
     <div class="w-full max-w-md">
 
@@ -35,7 +30,7 @@
 
         <!-- TITLE -->
         <h1 class="text-center text-3xl font-semibold mb-10">
-            Criar Conta
+            Create Account
         </h1>
 
         <!-- FORM -->
@@ -47,13 +42,12 @@
                     for="registerUsername"
                     class="absolute -top-3 left-4 z-10 bg-white px-2 text-lg font-semibold"
                 >
-                    Nome
+                    Name
                 </label>
 
                 <input
                     id="registerUsername"
                     type="text"
-                    placeholder="João Silva"
                     class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
                 >
             </div>
@@ -70,7 +64,6 @@
                 <input
                     id="registerEmail"
                     type="email"
-                    placeholder="joao.silva@example.com"
                     class="w-full h-14 px-6 rounded-[10px] border-2 border-black outline-none"
                 >
             </div>
@@ -87,7 +80,6 @@
                 <input
                     id="registerPassword"
                     type="password"
-                    placeholder="••••••••"
                     class="w-full h-14 pl-6 pr-12 rounded-[10px] border-2 border-black outline-none"
                 >
 
@@ -108,19 +100,19 @@
                 type="submit"
                 class="w-full h-12 bg-sky-500 rounded-[10px] text-white text-xl font-semibold transition-transform active:scale-95 hover:cursor-pointer"
             >
-                Criar Conta
+                Create Account
             </button>
 
             <!-- LOGIN LINK -->
             <div class="text-center text-lg sm:text-xl">
-                <span>Já tens conta? </span>
+                <span>Already have an account? </span>
 
                 <button
                     id="loginLink"
                     type="button"
                     class="text-sky-500 underline"
                 >
-                    Entra já
+                    Log in now
                 </button>
             </div>
 
@@ -128,19 +120,28 @@
 
     </div>
 
-    <script type="module">
-        lucide.createIcons();
+        <script>
+            (function () {
+                try {
+                    if (localStorage.getItem("huebly:displayMode") === "dark") {
+                        document.documentElement.classList.add("dark")
+                    }
+                } catch (e) {}
+            })()
+        </script>
+        <script type="module">
+                lucide.createIcons();
 
-        import {
-            initRegister,
-            loginLinkHandler,
-            initPasswordToggle
-        } from "../../controllers/authController.js";
+                import {
+                        initRegister,
+                        loginLinkHandler,
+                        initPasswordToggle
+                } from "../../controllers/authController.js";
 
-        initRegister();
-        loginLinkHandler();
-        initPasswordToggle('registerPassword','passwordToggle');
-    </script>
+                initRegister();
+                loginLinkHandler();
+                initPasswordToggle('registerPassword','passwordToggle');
+        </script>
 
 </body>
 </html>
