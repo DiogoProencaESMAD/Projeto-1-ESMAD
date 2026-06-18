@@ -17,6 +17,7 @@ Huebly is a university accessibility web app designed to help people with color 
 
 - HTML
 - CSS
+- Tailwind
 - JavaScript modules
 - `json-server` for local mock persistence
 - `python3 -m http.server` for the frontend
